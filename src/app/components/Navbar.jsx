@@ -1,8 +1,8 @@
-import styles from '../styles/navbar.css'
+import styles from '../styles/navbar.module.css'
 
 function Navbar() {
   return (
-    <div>navbar</div>
+    <div></div>
   )
 }
 

@@ -1,8 +1,8 @@
-import styles from '../styles/bio.css'
+import styles from '../styles/bio.module.css'
 
 function Bio() {
   return (
-    <div>bio</div>
+    <div></div>
   )
 }
 

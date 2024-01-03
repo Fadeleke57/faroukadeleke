@@ -1,8 +1,8 @@
-import styles from '../styles/contact.css'
+import styles from '../styles/contact.module.css'
 
 function Contact() {
   return (
-    <div>contact</div>
+    <div></div>
   )
 }
 

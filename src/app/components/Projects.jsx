@@ -1,8 +1,8 @@
-import styles from '../styles/projects.css'
+import styles from '../styles/projects.module.css'
 
 function Projects() {
   return (
-    <div>projects</div>
+    <div></div>
   )
 }
 
