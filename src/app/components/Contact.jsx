@@ -1,9 +1,9 @@
-import React from 'react'
+import styles from '../styles/contact.css'
 
-function contact() {
+function Contact() {
   return (
     <div>contact</div>
   )
 }
 
-export default contact
+export default Contact

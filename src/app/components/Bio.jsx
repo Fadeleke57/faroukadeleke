@@ -1,9 +1,9 @@
-import React from 'react'
+import styles from '../styles/bio.css'
 
-function bio() {
+function Bio() {
   return (
     <div>bio</div>
   )
 }
 
-export default bio
+export default Bio

@@ -1,9 +1,9 @@
-import React from 'react'
+import styles from '../styles/projects.css'
 
-function projects() {
+function Projects() {
   return (
     <div>projects</div>
   )
 }
 
-export default projects
+export default Projects

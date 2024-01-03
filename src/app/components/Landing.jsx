@@ -1,9 +1,9 @@
-import React from 'react'
+import styles from '../styles/landing.css'
 
-function landing() {
+function Landing() {
   return (
     <div>landing</div>
   )
 }
 
-export default landing
+export default Landing
