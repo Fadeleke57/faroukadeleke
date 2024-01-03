@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Anton } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const anton = Anton({ weight: '400',
+                      preload: false,
+                    })
 
 export const metadata: Metadata = {
   title: "Farouk's Portfolio",
@@ -16,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={anton.className}>{children}</body>
     </html>
   )
 }
