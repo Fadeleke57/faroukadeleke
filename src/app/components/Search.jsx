@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function Search() {
   return (
     <div className={styles.inputWrap}>
-        <input type="text" className={styles.searchInput} placeholder="Search Page..."/>
+        <input type="text" id={styles.searchInput} placeholder="Search Page..."/>
         <FontAwesomeIcon icon={faSearch} className={styles.icon}/>
     </div>
   )

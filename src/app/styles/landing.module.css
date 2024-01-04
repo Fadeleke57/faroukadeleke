@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    background: radial-gradient(80vw 80vh at left, #0048ff5a, #ffffff 50%);
 }
 
 .contentWrapper {
@@ -19,7 +20,7 @@
 .landingHeader h1 {
     font-size: 6em;
     letter-spacing: .02em;
-    background: -webkit-linear-gradient(#949494, #1e1e1e);
+    background: -webkit-linear-gradient(#000000, #1e1e1e);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -42,14 +43,14 @@
 }
 
 .bostonUniversity {
-    background: -webkit-linear-gradient(#949494, #1e1e1e);
+    background: -webkit-linear-gradient(#006eff, #1e1e1e);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .webDev {
-    background: -webkit-linear-gradient(#949494, #1e1e1e);
+    background: -webkit-linear-gradient(#006eff, #1e1e1e);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
