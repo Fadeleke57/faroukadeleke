@@ -1,0 +1,19 @@
+.inputWrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.searchInput {
+    padding: 1em 2em;
+    border-radius: 2em;
+}
+
+.icon {
+    font-size: 1.5em;
+    font-weight: 900;
+    margin-left: .5em;
+}

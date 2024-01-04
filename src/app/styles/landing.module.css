@@ -1,0 +1,56 @@
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.contentWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 2em
+}
+
+.landingHeader {
+    display: flex;
+    align-items: center;
+}
+
+.landingHeader h1 {
+    font-size: 6em;
+    letter-spacing: .02em;
+    background: -webkit-linear-gradient(#949494, #1e1e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.landingHeader h3 {
+    font-size: 2.5em;
+    letter-spacing: .002em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.landingHeader p {
+    font-size: 2em;
+}
+
+.profilePic {
+    width: 300px;
+    height: 300px;
+    filter: brightness(1.29);
+}
+
+.bostonUniversity {
+    background: -webkit-linear-gradient(#949494, #1e1e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.webDev {
+    background: -webkit-linear-gradient(#949494, #1e1e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
