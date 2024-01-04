@@ -1,14 +1,17 @@
 'use client'
 import styles from '../styles/Navbar.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { useState, useEffect } from 'react'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
 import Search from './Search'
 
 
+
 function Navbar() {
+
+  const gitHubLink="https://github.com/Fadeleke57"
+  const linkedInLink="https://www.linkedin.com/in/farouk-adeleke/"
 
   const [menuOpen, setMenuOpen] = useState(false)
   const [nav, setNav] = useState(false);
@@ -36,8 +39,8 @@ function Navbar() {
       <div className={styles.container}>
         <div className={styles.menu}>
 
-          <FontAwesomeIcon icon={faGithub} className={styles.icon}/>
-          <FontAwesomeIcon icon={faLinkedin} className={styles.icon} />  
+          <Link href={gitHubLink} target='blank'><FontAwesomeIcon icon={faGithub} className={styles.icon}/></Link>
+          <Link href={linkedInLink} target='blank'><FontAwesomeIcon icon={faLinkedin} className={styles.icon} /></Link>  
       
           <Search/>
         
