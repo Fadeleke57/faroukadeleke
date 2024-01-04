@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: radial-gradient(80vw 80vw at center, #0048ff5a, #ffffff 40%);
+    background: radial-gradient(140vw 140vw at left, #0048ff5a, #ffffff 40%);
     position: relative;
 }
 
