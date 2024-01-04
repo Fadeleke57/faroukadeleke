@@ -1,4 +1,4 @@
-import styles from '../styles/landing.module.css'
+import styles from '../styles/Landing.module.css'
 
 function Landing() {
   return (

@@ -1,4 +1,4 @@
-import styles from '../styles/bio.module.css'
+import styles from '../styles/Bio.module.css'
 
 function Bio() {
   return (
