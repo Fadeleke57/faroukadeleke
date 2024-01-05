@@ -34,7 +34,7 @@ function Navbar() {
   }
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={nav ? styles.navbarActive: styles.navbar}>
 
       <div className={styles.container}>
         <div className={styles.menu}>

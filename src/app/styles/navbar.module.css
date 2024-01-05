@@ -3,14 +3,14 @@
     width: 100%;
     padding: 2em;
     color: black;
-    transition: 0.5s ease-in-out;
+    transition: cubic-bezier(1, 0, 0, 1) ease-in-out;
     z-index: 100;
     position: fixed;
     left: 0;
     top: 0;
 }
 
-.navbar .container {
+.container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -28,42 +28,36 @@
 }
 
 .icon {
-font-size: 3em;
-color: black;
+    font-size: 3em;
+    color: black;
 }
 
-
-
 .menu-logo {
-width: 11em;
-display: none;
-height: auto;
+    width: 11em;
+    display: none;
+    height: auto;
 }
 
 .navbar-img {
-transition: 0.5s ease-in-out;
-width: 90px;
-height: 90px;
+    transition: 0.5s ease-in-out;
+    width: 90px;
+    height: 90px;
 }
 
 .menu-btn {
-cursor: pointer;
-font-size: 1.3em;
-display: none;
-transition: 0.3s;
+    cursor: pointer;
+    font-size: 1.3em;
+    display: none;
+    transition: 0.3s;
 }
 
 .menu-btn:hover {
-color: #000000;
+    color: #000000;
 }
 
-.navbar-active {
-position: fixed;
-background: rgba(255, 255, 255, 1);
-box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
-}
+/*when nav is scrolled */
 
-.navbar-active .navbar-img {
-width: 70px;
-height: 70px;
+.navbarActive {
+    display: none;
+    transition: 1s ease-in-out;
 }

@@ -1,0 +1,85 @@
+.hero {
+  padding: 2em;
+  text-align: center;
+  border: 4px dotted purple;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: clamp(1em, 7vw, 8em);
+  letter-spacing: 5px;
+  word-spacing: -0.2em;
+  font-weight: 400;
+  line-height: 1em;
+  font-kerning: none;
+  border: 4px dotted red;
+}
+
+.subTitle {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 5em auto;
+  font-size: 1.5em;
+  max-width: 700px;
+  line-height: 34px;
+  border: 4px dotted green;
+}
+
+.services {
+  padding: 2em;
+  max-width: 1100px;
+  margin: 2em auto;
+}
+
+.service {
+  box-shadow: 0 0 5em rgba(0, 0, 0, .4);
+}
+
+.service:nth-child(3) {
+  z-index: 1;
+  position: relative;
+}
+
+.servicesImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 1em 1em;
+}
+
+.service div {
+  background-color: #fff;
+  color: #000;
+  padding: 2em;
+  border-radius: 1em 1em 0 0;
+  text-align: center;
+}
+
+.service div p {
+  margin: 0.8em auto 0 auto;
+  max-width: 500px;
+  font-size: 1.1em;
+}
+
+.serviceAnim {
+  box-shadow: 0 0 5em rgba(0, 0, 0, .4);
+}
+    
+.serviceAnim div {
+  background-color: #fff;
+  color: #000;
+  padding: 2em;
+  border-radius: 1em 1em 0 0;
+  text-align: center;
+}
+
+.serviceAnim div p {
+  margin: 0.8em auto 0 auto;
+  max-width: 500px;
+  font-size: 1.1em;
+}
+
+
+@media screen and (max-width: 600px) {
+.sub-title {
+  font-size: 1.1em;
+}
+}

@@ -8,9 +8,13 @@ import Projects from './components/Projects'
 export default function Home() {
   return (
     <main>
-      <Navbar/>
-      <Landing/>
-      <Bio/>
+      {/*
+        <Navbar/>
+        <Landing/>
+        <Bio/>
+      */}
+
+    
       <Projects/>
       <Contact/>
       <Footer/>
