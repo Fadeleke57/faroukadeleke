@@ -1,12 +1,17 @@
 'use client'
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
-import Lenis from '@studio-freight/lenis';
+
 import styles from '../styles/Projects.module.css';
+
 import Image from 'next/image';
 import photo from '../../../public/background.jpg'
+import bfv from '../../../public/servicePics/BFP.png'
+import ctv from '../../../public/servicePics/CTP.png'
+import ldv from '../../../public/servicePics/LDP.png'
+
 //life saver
 import { useGSAP } from "@gsap/react";
 
@@ -14,7 +19,6 @@ import Link from 'next/link'
 
   function Projects() {
 
-    
     const heroSection = useRef(null)
     const title = useRef(null)
     const subtitle = useRef(null)
@@ -101,7 +105,7 @@ import Link from 'next/link'
 
       <section ref={heroSection} className={styles.hero} id='Bio'>
 
-        <h1 ref={title} className={styles.title}>Projects</h1>
+        <h1 ref={title} className={styles.title}><span className={styles.gradient}>My</span> Projects</h1>
 
         <p ref={subtitle} className={styles.subTitle}>
           I strive to put one-hundred percent effort into every project that I delve into, focusing on honing my skills over subpar work. Below are some of the projects I have completed in and outside of the classroom. 
@@ -113,32 +117,32 @@ import Link from 'next/link'
 
         <div className={styles.serviceAnim}>
           <div>
-            <h2>Portrait Photography</h2>
+            <h2>REST API For Predicting Next-Day Stock Price</h2>
             <p>
-              Ava captures the unique essence of individuals, families, and couples with a keen eye for detail and an artistic touch.
+              A specialized stock price prediction tool using PyTorch and NumPy, focusing on LSTM neural networks to analyze and predict stock market trends.
             </p>
           </div>
-          <Image src={photo} className={styles.servicesImg}/>
+          <Image src={ldv} className={styles.servicesImg}/>
         </div>
 
         <div className={styles.serviceAnim}>
           <div>
-            <h2>Portrait Photography</h2>
+            <h2>Bonsai Finance</h2>
             <p>
-              Ava captures the unique essence of individuals, families, and couples with a keen eye for detail and an artistic touch.
+              A comprehensive platform powered by the Alpha VantageAPI, offering real-time stock information and relavant news to users.
             </p>
           </div>
-          <Image src={photo} className={styles.servicesImg}/>
+          <Image src={bfv} className={styles.servicesImg}/>
         </div>
 
         <div className={styles.service}>
           <div>
-            <h2>Product Photography</h2>
+            <h2>Investment Management Company Site</h2>
             <p>
-              If you're a business owner looking to showcase your products in the best possible light, Ava's product photography will help you shine.
+              Website built with NextJs for Cat Trail Capital LLC, an investment management company. Deployed on Vercel.
             </p>
           </div>
-          <Image src={photo} className={styles.servicesImg}/>
+          <Image src={ctv} className={styles.servicesImg}/>
         </div>
 
       </section>
@@ -147,7 +151,7 @@ import Link from 'next/link'
 
         <div ref={footerDiv}>
           <h2>There's More!</h2>
-          <p>If you want to learn more about a particular project or see my full array of repositories visit my github at <Link href={'https://github.com/Fadeleke57?tab=repo'} target='blank'>https://github.com/Fadeleke57</Link>.</p>
+          <p>To learn more about a particular project or view my full array of repositories, visit my github at <Link href={'https://github.com/Fadeleke57?tab=repo'} target='blank'>https://github.com/Fadeleke57</Link>.</p>
         </div>
 
       </footer>

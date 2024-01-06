@@ -28,6 +28,13 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.services h2 {
+  background: -webkit-linear-gradient(#006eff, #1e1e1e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .service {
   box-shadow: 0 0 5em rgba(0, 0, 0, .4);
 }
@@ -101,6 +108,12 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.gradient {
+  background: -webkit-linear-gradient(#006eff, #1e1e1e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #006eff;
 }
 
 @media screen and (max-width: 600px) {
