@@ -10,35 +10,89 @@ import photo from '../../../public/background.jpg'
 //life saver
 import { useGSAP } from "@gsap/react";
 
+import Link from 'next/link'
+
   function Projects() {
 
-    const title = useRef(null)
+    
     const heroSection = useRef(null)
+    const title = useRef(null)
+    const subtitle = useRef(null)
+
+    const footer = useRef(null)
+    const footerDiv = useRef(null)
+
     gsap.registerPlugin(ScrollTrigger) 
 
     useGSAP(() => {
 
-      // Split the title text into individual characters
+      // splits the title text into individual characters
       const titleText = new SplitType(title.current, {
         types: "chars"
       });
 
-      if (title.current) {
-        //title animation
-        gsap.to(titleText.chars, {
-          y: -300, //Move each letter up
-          stagger: 0.1, //Set a delay for every letter
-          scrollTrigger: {
-            trigger: heroSection.current, //Set trigger element for animation
-            start: "top top", //Set starting point of the animation
-            scrub: 1, //Make the animation follow the scroll position
-            pin: heroSection.current, //Fix the trigger element until the animation is done
-        },
+      const subTitleText = new SplitType(subtitle.current, {
+        types: "chars"
       });
-      
+
+      if (title.current) {
+        // title animation
+        gsap.to(titleText.chars, {
+          y: -300, // letter moves up 300 pixels
+          stagger: 0.1, //staggers the split letters
+          scrollTrigger: {
+            trigger: heroSection.current, //start of section begins animation
+            start: "top top", //starting point -- top of the view box is at the top of trigger
+            scrub: true, //follows the scroll bar
+            pin: true, //fixes the trigger element until the animation is done
+          },
+        });
+
+        // subtitle animation
+        gsap.from(subTitleText.chars, {
+          opacity: 0.2,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: heroSection.current,
+            start: "top 20%",
+            scrub: true,
+          },
+        });
+
+        //adds all animated sections to an array
+        const services = gsap.utils.toArray('.' + styles.serviceAnim);
+        //loops through each service element
+        services.forEach(service => {
+          //services animation
+          gsap.to(service, {
+            scale: 0.8,
+            yPercent: -20,
+            scrollTrigger: {
+              trigger: service,
+              start: "top top",
+              scrub: true,
+              pin: true,
+              // so the services stack
+              pinSpacing: false,
+              end: "bottom top",
+            },
+          });
+        });
+
+        //Footer animation
+        gsap.from(footerDiv.current, {
+          y: 100,
+          opacity: 0,
+          //Delay each div animation by 0.5 seconds
+          scrollTrigger: {
+            trigger: footer.current,
+            start: "top bottom",
+            //Restart animation when scrolling back
+            toggleActions: "restart none none none",
+          },
+        });
+    
       }
-
-
 
     });
 
@@ -46,10 +100,13 @@ import { useGSAP } from "@gsap/react";
     <div>
 
       <section ref={heroSection} className={styles.hero} id='Bio'>
+
         <h1 ref={title} className={styles.title}>Projects</h1>
-        <p className={styles.subTitle}>
-          Ava Taylor is a passionate and creative photographer based in the picturesque town of Willowbrook. With an unquenchable thirst for capturing the beauty of the world through her lens. 
+
+        <p ref={subtitle} className={styles.subTitle}>
+          I strive to put one-hundred percent effort into every project that I delve into, focusing on honing my skills over subpar work. Below are some of the projects I have completed in and outside of the classroom. 
         </p>
+
       </section>
 
       <section className={styles.services}>
@@ -74,16 +131,6 @@ import { useGSAP } from "@gsap/react";
           <Image src={photo} className={styles.servicesImg}/>
         </div>
 
-        <div className={styles.serviceAnim}>
-          <div>
-            <h2>Landscape Photography</h2>
-            <p>
-              She has a profound connection with nature and is adept at capturing the awe-inspiring beauty of landscapes and scenic locations.
-            </p>
-          </div>
-          <Image src={photo} className={styles.servicesImg} />
-        </div>
-
         <div className={styles.service}>
           <div>
             <h2>Product Photography</h2>
@@ -95,6 +142,15 @@ import { useGSAP } from "@gsap/react";
         </div>
 
       </section>
+
+      <footer ref={footer} className={styles.footer}>
+
+        <div ref={footerDiv}>
+          <h2>There's More!</h2>
+          <p>If you want to learn more about a particular project or see my full array of repositories visit my github at <Link href={'https://github.com/Fadeleke57?tab=repo'} target='blank'>https://github.com/Fadeleke57</Link>.</p>
+        </div>
+
+      </footer>
 
     </div>
   )

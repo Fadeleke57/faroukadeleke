@@ -25,6 +25,7 @@
   padding: 2em;
   max-width: 1100px;
   margin: 2em auto;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .service {
@@ -74,9 +75,37 @@
   font-size: 1.1em;
 }
 
+.footer {
+  max-width: 1100px;
+  margin: 2em auto 8em auto;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer p {
+  font-size: 1.2em;
+  line-height: 27px;
+  max-width: 600px;
+}
+
+.footer h2 {
+  margin-bottom: 0.5em;
+}
+
+.footer a {
+  font-size: 1.1em;
+  background: -webkit-linear-gradient(#006eff, #1e1e1e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 @media screen and (max-width: 600px) {
-.sub-title {
-  font-size: 1.1em;
-}
+  .sub-title, .footer p {
+    font-size: 1.1em;
+  }
+
 }
