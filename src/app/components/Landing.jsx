@@ -2,13 +2,17 @@
 import styles from '../styles/Landing.module.css'
 import Image from 'next/image'
 import profilePic from '../../../public/profilePic.jpg'
+
 import { Fade } from "react-awesome-reveal";
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import Link from 'next/link'
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
+import { useGSAP } from "@gsap/react";
 
 function Landing() {
 
@@ -17,7 +21,7 @@ function Landing() {
 
   const namesRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: namesRef.current,
