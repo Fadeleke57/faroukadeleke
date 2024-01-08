@@ -3,7 +3,6 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: radial-gradient(140vw 140vw at left, #0048ff5a, #ffffff 40%);
     position: relative;
 }
 
@@ -72,4 +71,14 @@
 
 .icon {
     font-size: 2em;
+}
+
+@media screen and (max-width: 800px) {
+    .landingHeader h1 {
+        font-size: 3em;
+        font-size: clamp(3em, 4vw, 5em);
+    }
+    .landingHeader h3 {
+        font-size: 1.3em;
+    }
 }

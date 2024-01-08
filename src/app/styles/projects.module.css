@@ -1,5 +1,5 @@
 .hero {
-  padding: 10em;
+  padding: 2em;
   text-align: center;
 }
 
@@ -104,6 +104,10 @@
 
 .footer a {
   font-size: 1.1em;
+  color: #006eff;
+}
+
+.footer a:hover {
   background: -webkit-linear-gradient(#006eff, #1e1e1e);
   -webkit-background-clip: text;
   background-clip: text;
@@ -111,14 +115,21 @@
 }
 
 .gradient {
-  background: -webkit-linear-gradient(#006eff, #1e1e1e);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: #006eff;
+  color: #4D41EB;
 }
 
 @media screen and (max-width: 600px) {
-  .sub-title, .footer p {
+  .subTitle, .footer p {
     font-size: 1.1em;
+    line-height: 27px;
+  }
+
+  .title {
+    font-size: 3.5em;
+  }
+
+  .hero {
+    padding: 2em
   }
 
 }

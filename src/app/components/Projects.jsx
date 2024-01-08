@@ -106,7 +106,6 @@ import Link from 'next/link'
       <section ref={heroSection} className={styles.hero} id='Bio'>
 
         <h1 ref={title} className={styles.title}><span className={styles.gradient}>My</span> Projects</h1>
-
         <p ref={subtitle} className={styles.subTitle}>
           I strive to put one-hundred percent effort into every project that I delve into, focusing on honing my skills over subpar work. Below are some of the projects I have completed in and outside of the classroom. 
         </p>
@@ -148,12 +147,10 @@ import Link from 'next/link'
       </section>
 
       <footer ref={footer} className={styles.footer}>
-
         <div ref={footerDiv}>
           <h2>There's More!</h2>
           <p>To learn more about a particular project or view my full array of repositories, visit my github at <Link href={'https://github.com/Fadeleke57?tab=repo'} target='blank'>https://github.com/Fadeleke57</Link>.</p>
         </div>
-
       </footer>
 
     </div>

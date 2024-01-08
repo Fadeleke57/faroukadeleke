@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <main>
       
-        <Navbar/>
-        <Landing/>
-    
+      <Navbar/>
+      <Landing/>
+      <Bio/>
       <Projects/>
       <Contact/>
       <Footer/>
