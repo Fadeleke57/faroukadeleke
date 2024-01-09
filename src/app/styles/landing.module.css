@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    position: relative;
+    position: relative; 
 }
 
 .contentWrapper {
@@ -46,14 +46,14 @@
 }
 
 .bostonUniversity {
-    background: -webkit-linear-gradient(#006eff, #1e1e1e);
+    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .webDev {
-    background: -webkit-linear-gradient(#006eff, #1e1e1e);
+    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

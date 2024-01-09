@@ -1,4 +1,8 @@
 /*Footer*/
+.footer {
+    background-color: #fff;
+    padding: 5em 4em 1em 4em;
+}
 
 .footer h1 {
     color: #fff;
@@ -7,7 +11,7 @@
 }
   
 .footer h2 {
-    background: -webkit-linear-gradient(#8D38EB, #1e1e1e);
+    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -23,7 +27,7 @@
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2.5em;
+    padding:  0 2.5em;
 }
 
 .formContainer {
@@ -34,7 +38,7 @@
 }
 
 .formHeader {
-    flex-basis: 50%;
+    flex-basis: 60%;
 }
 
 .formHeader p,.formHeader h2 {
@@ -43,30 +47,13 @@
 
 .formHeader p {
     font-size: 1.4em;
+    margin-bottom: 0.1em;
 }
 
 .footer {
     text-align: center;
     background-size: cover;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.footer .btn {
-    margin: 4em 0 2em 0;
-    font-size: 1.5em;
-    transition: 2s;
-    color: #8D38EB;;
-}
-
-.footer .btn::before {
-    color: #8D38EB;
-}
-
-.footer .btn:hover {
-    background: -webkit-linear-gradient(#8D38EB, #1e1e1e);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .socialMedia p {
@@ -119,7 +106,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: #8D38EB;
+    background: #2e1edd;
     transition: 300ms ease-in-out;
     z-index: 0;
 }
@@ -163,5 +150,8 @@
     
     .formHeader p {
         font-size: 1.4em;
+    }
+    .footer {
+        padding: 5em 0 1em 0;
     }
 }

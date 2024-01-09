@@ -19,11 +19,7 @@
 }
 
 .form input:focus {
-    border-bottom: 3px solid #8D38EB;
-}
-
-.form p:focus {
-    color: #8D38EB;
+    border-bottom: 3px solid #2e1edd;
 }
 
 .form p:before {
@@ -31,8 +27,11 @@
     display: block;
     margin: 28px 0 9px;
     font-size: 1.3em;
-    color: #000000;
     font-weight: 700;
+    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .form button {
@@ -41,18 +40,19 @@
     margin: 8px 0 0;
     font-family:'Montserrat',sans-serif;
     background: transparent;
-    color:#8D38EB;
     cursor: pointer;
     transition: all .4s;
     border-radius: .5em;
     font-weight: 600;
-    border-color: #8D38EB;
+
+    border-color: #2e1edd;
+    color: #2e1edd;
 }
 
 .form button:hover {
-    background-color:#8D38EB;
-    color:white;
-    border-color: #8D38EB;
+    background-color: #2e1edd;
+    color: white;
+    border-color: #2e1edd;
 }
 
 .success {

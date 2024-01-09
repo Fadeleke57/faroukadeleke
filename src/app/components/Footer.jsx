@@ -5,7 +5,8 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 
-import {useRef, useState} from 'react'
+import { Fade } from "react-awesome-reveal";
+import {useRef} from 'react'
 
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -13,7 +14,6 @@ import { useGSAP } from "@gsap/react";
 
 import Link from 'next/link'
 import Form from './Form'
-import { userAgent } from 'next/server';
 
 function Footer() {
   const title = useRef(null)
@@ -38,9 +38,10 @@ function Footer() {
   })
   };
 
+  //resets
   const handleMouseLeave = (index) => {
     gsap.to(socialMediaIcons.current[index], {
-      rotate: 0, //resets
+      rotate: 0, 
       duration: 0.5
     });
   };
@@ -52,10 +53,13 @@ function Footer() {
       <div className={styles.formContainer}>
 
         <div className={styles.formHeader}>
-          <h2 ref={title}>Get In Touch</h2>
+        <Fade direction='left' triggerOnce>
+          <h2>Get In Touch</h2>
           <br></br>
           <p>fadeleke57@gmail.com</p>
-          <p>(732)-666-8394</p>
+          <p>(732) 666-8394</p>
+        </Fade>
+
         </div>
 
         <Form/>
@@ -65,28 +69,52 @@ function Footer() {
 
       <div className={styles.socialMedia}>
 
-        <a href="#" onMouseEnter={() => handleHover(0)} onMouseLeave={() => handleMouseLeave(0)}>
+        <a 
+          href="#" 
+          onMouseEnter={() => handleHover(0)} 
+          onMouseLeave={() => handleMouseLeave(0)}
+        >
           <div>
             <h3>Discord</h3>
             <p>@faroukade_73606</p>
           </div>
-          <FontAwesomeIcon icon={faDiscord} ref={el => socialMediaIcons.current[0] = el} className={styles.socialMediaIcon}/>
+          <FontAwesomeIcon 
+            icon={faDiscord} 
+            ref={el => socialMediaIcons.current[0] = el} 
+            className={styles.socialMediaIcon}
+          />
         </a>
 
-        <a href="#" onMouseEnter={() => handleHover(1)} onMouseLeave={() => handleMouseLeave(1)}>
+        <a 
+          href="#" 
+          onMouseEnter={() => handleHover(1)} 
+          onMouseLeave={() => handleMouseLeave(1)}
+        >
           <div>
             <h3>LinkedIn</h3>
             <p>@farouk-adeleke</p>
           </div>
-          <FontAwesomeIcon icon={faLinkedin} ref={el => socialMediaIcons.current[1] = el} className={styles.socialMediaIcon}/>
+          <FontAwesomeIcon 
+            icon={faLinkedin} 
+            ref={el => socialMediaIcons.current[1] = el} 
+            className={styles.socialMediaIcon}
+          />
         </a>
 
-        <a href="#" onMouseEnter={() => handleHover(2)} onMouseLeave={() => handleMouseLeave(2)}>
+        <a 
+          href="#" 
+          onMouseEnter={() => handleHover(2)} 
+          onMouseLeave={() => handleMouseLeave(2)}
+        >
           <div>
             <h3>Github</h3>
             <p>@Fadeleke57</p>
           </div>
-          <FontAwesomeIcon icon={faGithub} ref={el => socialMediaIcons.current[2] = el} className={styles.socialMediaIcon}/>
+          <FontAwesomeIcon 
+            icon={faGithub} 
+            ref={el => socialMediaIcons.current[2] = el} 
+            className={styles.socialMediaIcon}
+          />
         </a>
 
       </div>

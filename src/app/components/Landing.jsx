@@ -22,12 +22,13 @@ function Landing() {
   const namesRef = useRef(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: namesRef.current,
-        start: "top center", // animation starts when the top of the element hits the center of the viewport
-        end: "bottom top", // animation ends when the bottom of the element leaves the top of the viewport
-        scrub: true, // Smooth scrubbing
+    if (namesRef.current) {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: namesRef.current,
+          start: "top center", // animation starts when the top of the element hits the center of the viewport
+          end: "bottom top", // animation ends when the bottom of the element leaves the top of the viewport
+          scrub: true, // Smooth scrubbing
       },
     });
 
@@ -43,6 +44,8 @@ function Landing() {
         tl.scrollTrigger.kill();
       }
     };
+    }
+
   }, []);
 
   return (
