@@ -47,7 +47,7 @@ function Skills() {
             <div>
             <h1><span className={styles.gradient}>My</span> Skills</h1>
             <h3>Some of my tecnhical and interpersonal skills...</h3>            
-            <FontAwesomeIcon icon={faArrowDown} bounce className={styles.arrow}/>
+        
             </div>
 
         </section>
