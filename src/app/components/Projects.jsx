@@ -156,8 +156,8 @@ import Link from 'next/link'
               </div>
             </Link>
 
-            <p className={styles.serviceAnimSubtitle}>
-              A specialized stock price prediction tool using PyTorch and NumPy, focusing on LSTM neural networks to analyze and predict stock market trends.
+            <p>
+              Specialized stock price prediction tool using PyTorch and NumPy, focusing on LSTM neural networks to analyze and predict stock market trends.
             </p>
 
           </div>
@@ -189,8 +189,8 @@ import Link from 'next/link'
               </div>
             </Link>
 
-            <p className={styles.serviceAnimSubtitle}>
-              A comprehensive platform powered by the Alpha VantageAPI, offering real-time stock information and relavant news to users.
+            <p>
+              Platform powered by the AlphaVantage API, offering real-time stock information and relavant news to users.
             </p>
        
           </div>
@@ -221,7 +221,7 @@ import Link from 'next/link'
               </div>
             </Link>
 
-            <p className={styles.serviceAnimSubtitle}>
+            <p>
               Website built with NextJs for Cat Trail Capital LLC, an investment management company. Deployed on Vercel.
             </p>
 
@@ -239,7 +239,22 @@ import Link from 'next/link'
 
         <Fade direction='up' triggerOnce>
           <h2>There's More!</h2>
-          <p>To learn more about a particular project or to view my full array of repositories, visit my github at <Link href={'https://github.com/Fadeleke57?tab=repo'} target='blank'>https://github.com/Fadeleke57</Link>.</p>
+          <p>To learn more about a particular project or to view my full array of repositories, visit my github at 
+          <Link 
+            href={'https://github.com/Fadeleke57?tab=repo'} 
+            target='blank'
+            onMouseEnter={() => handleHover(3)} 
+            onMouseLeave={() => handleMouseLeave(3)}
+            style={{marginLeft: 6 + 'px'}}
+          >
+            https://github.com/Fadeleke57 
+            <FontAwesomeIcon 
+              icon={faArrowRight} 
+              ref={el => projectArrows.current[3] = el}
+              className={styles.projectArrow}
+            />
+          </Link>
+          </p>
         </Fade>
 
         </div>

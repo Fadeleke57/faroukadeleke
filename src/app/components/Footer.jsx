@@ -19,6 +19,8 @@ function Footer() {
   const title = useRef(null)
   const socialMediaIcons = useRef([]);
 
+  gsap.registerPlugin(ScrollTrigger);
+  
   useGSAP(() => {
     gsap.from(title.current, {
       x: -500,

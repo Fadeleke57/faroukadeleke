@@ -19,11 +19,20 @@
 }
 
 .projects  p {    
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 2em 0;
     font-size: 1.2em;
     line-height: 2em;
     max-width: 500px;
+}
+
+.btn {
+    color: #2e1edd;
+    letter-spacing: 0.03em;
+}
+
+.projectArrow {
+    margin-left: 7px;
+    color: #2e1edd;
 }
 
 .gradient {
@@ -62,7 +71,11 @@
       gap: 0;
     }
     .column:nth-child(2) .image:nth-child(1) {
+      margin-top: 2.5em;
       margin-bottom: 2.5em;
+    }
+    .btn {
+        margin-bottom: 1em;
     }
 
 }

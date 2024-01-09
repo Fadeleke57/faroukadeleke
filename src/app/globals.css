@@ -7,6 +7,10 @@ body {
     background: radial-gradient(200% 200% at left, #0048ff5a, #ffffff 40%);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
+p, h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
   
 * {
     margin: 0;

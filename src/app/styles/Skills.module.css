@@ -1,0 +1,71 @@
+.gradient {
+    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.skills {
+    background-color: black;
+    color: white;
+}
+
+.skills p {
+    margin: 1em 0;
+    font-size: 1.1em;
+    line-height: 34px;
+    max-width: 650px;
+}
+
+.skills h3 {
+    margin: 1em 0;
+    font-size: 2em;
+    line-height: 44px;
+    max-width: 500px;
+    letter-spacing: 0.02em;
+}
+
+.hero {
+    height: 75vh;
+    min-height: 10em;
+    padding: 6em 4em;
+    display: flex;
+    position: relative;
+}
+
+.hero h1 {
+    letter-spacing: .04em;
+    font-size: clamp(3em, 6vw, 6em);
+    font-weight: 400;
+}
+
+.gallery {
+    height: 100vh;
+    min-height: 30em;
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.galleryImg{
+    width: 20vw;
+    min-width: 25em;
+    max-width: 35em;
+    height: 90vh;
+    object-fit: cover;
+    padding: 0 2em;
+}
+
+.about {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 2.5em;
+}
+
+.about h2 {
+    font-size: 3em;
+}
+
+.arrow {
+    font-size: 2.5em;
+    text-align: center;
+}
