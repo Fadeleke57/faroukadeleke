@@ -10,7 +10,23 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import Image from 'next/image'
 import test from '../../../public/background.jpg'
 
+import react from '../../../public/photos/icons/react.svg'
+import next from '../../../public/photos/icons/next.svg'
+import html from '../../../public/photos/icons/html.svg'
+import css from '../../../public/photos/icons/css.svg'
+import unix from '../../../public/photos/icons/unix.svg'
+import python from '../../../public/photos/icons/python.svg'
+import java from '../../../public/photos/icons/java.svg'
+import vercel from '../../../public/photos/icons/vercel.svg'
+import javascript from '../../../public/photos/icons/javascript.svg'
+import django from '../../../public/photos/icons/django.svg'
+
+
 function Skills() {
+
+    const my = useRef(null);
+    const skills = useRef(null);
+    const skillsSection = useRef(null);
 
     const gallery = useRef(null);
     const galleryWrapper = useRef(null);
@@ -31,9 +47,29 @@ function Skills() {
                 ease: "none",
                 scrollTrigger: {
                     trigger: galleryWrapper.current,
-                    start: "top 20px",
+                    start: "top 30%",
                     end: "+=" + amountToScroll,
                     pin: true,
+                    scrub: true,
+                }
+            });
+
+            gsap.from(my.current, {
+                x: -200,
+                scrollTrigger: {
+                    trigger: skillsSection.current,
+                    start: "top 40%",
+                    end: '+=300',
+                    scrub: true,
+                }
+            });
+
+            gsap.from(skills.current, {
+                x: 10 + 'vw',
+                scrollTrigger: {
+                    trigger: skillsSection.current,
+                    start: "top 40%",
+                    end: '+=350',
                     scrub: true,
                 }
             });
@@ -41,27 +77,32 @@ function Skills() {
     });
 
   return (
-    <div className={styles.skills}>
+    <div className={styles.skills} ref={skillsSection}>
 
         <section className={styles.hero}>
-            <div>
-            <h1><span className={styles.gradient}>My</span> Skills</h1>
-            <h3>Some of my tecnhical and interpersonal skills...</h3>            
-        
+            <div className={styles.skillsHeader}>
+            <h1 ref={my} className={styles.gradient}>My</h1>
+            <h1 ref={skills}>Skills</h1>
+                <p>
+                   I believe anything can be learned through the internet, with projects to suplement gained knowledge. Here are some of the technical skills that I am currently well-versed in.
+                </p>           
             </div>
 
         </section>
 
         <section ref={galleryWrapper} className={styles.galleryWrapper}>
             <div ref={gallery} className={styles.gallery}>
-                <Image src={test} className={styles.galleryImg}/>
-                <Image src={test} className={styles.galleryImg}/>
-                <Image src={test} className={styles.galleryImg}/>
-                <Image src={test} className={styles.galleryImg}/>
-                <Image src={test} className={styles.galleryImg}/>
-                <Image src={test} className={styles.galleryImg}/>
-                <Image src={test} className={styles.galleryImg}/>
-                <Image src={test} className={styles.galleryImg}/>
+                <Image src={react} className={styles.galleryImg}/>
+                <Image src={next} className={styles.galleryImg}/>
+                <Image src={vercel} className={styles.galleryImg}/>
+                <Image src={html} className={styles.galleryImg}/>
+                <Image src={css} className={styles.css}/>
+                <Image src={javascript} className={styles.js}/>
+                <Image src={java} className={styles.galleryImg}/>
+                <Image src={python} className={styles.galleryImg}/>
+                <Image src={unix} className={styles.galleryImg}/>
+                <Image src={django} className={styles.galleryImg}/>
+
             </div>
         </section>
 

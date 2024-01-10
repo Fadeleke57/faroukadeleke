@@ -38,12 +38,6 @@ function Landing() {
       ease: "none",
       css: { letterSpacing: '2vw' }, // adjusts the letterSpacing value to control the separation distance
     });
-
-    return () => {
-      if (tl.scrollTrigger) {
-        tl.scrollTrigger.kill();
-      }
-    };
     }
 
   }, []);
@@ -54,11 +48,11 @@ function Landing() {
 
       <div className={styles.landingHeader}>
           <div>
-            <Fade cascade triggerOnce>
+            <Fade cascade>
             <p>Hello! I'm..</p>
             </Fade>
             <h1 ref={namesRef}>Farouk * Adeleke</h1>
-            <Fade cascade triggerOnce>
+            <Fade cascade>
             <h3>Student at <span className={styles.bostonUniversity}>Boston University</span></h3>
             <h3>Freelance <span className={styles.webDev}>Web Devlopment</span></h3>
             </Fade>

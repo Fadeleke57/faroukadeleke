@@ -1,6 +1,5 @@
 /*Footer*/
 .footer {
-    background-color: #fff;
     padding: 5em 4em 1em 4em;
 }
 
@@ -81,7 +80,7 @@
     align-items: center;
     color: black;
     padding: 2em;
-    transition: 200ms;
+    transition: 500ms;
 }
 
 .socialMedia p {
