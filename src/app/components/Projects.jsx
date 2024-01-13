@@ -11,23 +11,26 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Fade } from "react-awesome-reveal";
 
 import Image from 'next/image';
-import photo from '../../../public/background.jpg'
+import ct from '../../../public/photos/cattrail.png'
+import bf from '../../../public/photos/bonsai.png'
+import network from '../../../public/photos/network.jpg'
 
 //life saver
 import { useGSAP } from "@gsap/react";
-
 import Link from 'next/link'
 
   function Projects() {
+   
+    const heroSection = useRef(null) //ref for title and subtitle box
+    const title = useRef(null) //header ref
+    const subtitle = useRef(null) //subtitle ref
 
-    const heroSection = useRef(null)
-    const title = useRef(null)
-    const subtitle = useRef(null)
+    const footer = useRef(null) //footer box ref
+    const endBox = useRef(null) //footer 
 
-    const footer = useRef(null)
-    const footerDiv = useRef(null)
+    const textContent = useRef(null) //footer text to be translated up
 
-    const projectArrows = useRef([])
+    const projectArrows = useRef([]) //all the arrows in Projects.jsx
 
     gsap.registerPlugin(ScrollTrigger) 
 
@@ -45,23 +48,23 @@ import Link from 'next/link'
           stagger: 0.1, //staggers the split letters
           scrollTrigger: {
             trigger: heroSection.current, //start of section begins animation
-            start: "top 13%", //starting point -- top of the view box is at the top of trigger
+            start: "top 13%", //starting point -- top of the view box is at the 13% from top of trigger
             scrub: true, //follows the scroll bar
             pin: true, //fixes the trigger element until the animation is done
           },
         });      
         
         const subTitleText = new SplitType(subtitle.current, {
-          types: "words"
+          types: "chars" 
         });
 
         // subtitle animation
-        gsap.from(subTitleText.words, {
-          opacity: 0.2,
+        gsap.from(subTitleText.chars, {
+          opacity: 0.2, //chars become become black as user scrolls
           stagger: 0.1,
           scrollTrigger: {
             trigger: heroSection.current,
-            start: "top 20%",
+            start: "top 30%",
             scrub: true,
           },
         });
@@ -87,22 +90,21 @@ import Link from 'next/link'
         });
 
         //footer animation
-        gsap.from(footerDiv.current, {
-          y: 300,
-          opacity: 0,
-          //delays each div animation by 0.5 seconds
+        gsap.to(textContent.current, {
+          y: "0%", //text goes back to original
           scrollTrigger: {
             trigger: footer.current,
-            start: "top bottom",
-            //restarts the animation when scrolling back
-            toggleActions: "play none none none",
+            start: "top 70%",
+            duration: 1.4,
+            toggleActions: "play none none none", //only plays once
           },
         });
-    
-      }
+  
+      };
 
     });
 
+    //link arrow animation
     const handleHover = (index) => {
       gsap.to(projectArrows.current[index], {
         x: 30,
@@ -110,7 +112,7 @@ import Link from 'next/link'
     })
     };
   
-    //resets
+    //resets when cursor leaves link
     const handleMouseLeave = (index) => {
       gsap.to(projectArrows.current[index], {
         x: 0,
@@ -123,23 +125,23 @@ import Link from 'next/link'
 
       <section ref={heroSection} className={styles.hero} id='Bio'>
 
-        <h1 ref={title} className={styles.title}><span className={styles.gradient}>My</span> Projects</h1>
+        <div ref={title}><h1 className={styles.title}><span className={styles.gradient}>My</span> Projects</h1></div>
         <p ref={subtitle} className={styles.subTitle}>
-          I strive to put one-hundred percent effort into every project that I delve into, focusing on honing my skills over subpar work. Below are some of the projects I have completed in and outside of the classroom. 
+          I strive to put one-hundred percent effort into every project that I delve into, focusing on honing my skills over subpar work. Below are some of the projects I have completed in and outside of the classroom.. 
         </p>
 
       </section>
 
       {
-        /* LSTM */
+        /* LSTM Project */
       }
 
       <section className={styles.services}>
 
         <div className={styles.serviceAnim}>
 
-          <div>
-
+          <div className={styles.serviceHeaderBox}>
+          
             <Link href={'https://github.com/Fadeleke57/bonsai-finance-app'} target='blank'>
               <div 
                 className={styles.projectHeader}
@@ -161,17 +163,21 @@ import Link from 'next/link'
             </p>
 
           </div>
-          <Image src={photo} className={styles.servicesImg}/>
+
+          <div className={styles.imageBox}>
+            <Image src={network} className={styles.servicesImg}/>
+          </div>
+
         </div>
 
       {
-        /*BONSAI FINANCE*/
+        /*BONSAI FINANCE Project*/
       }
 
         <div className={styles.serviceAnim}>
 
-          <div>
-
+          <div className={styles.serviceHeaderBox}>
+      
             <Link href={'https://stock-tracking-app.vercel.app/'} target='blank'>
               <div 
                 className={styles.projectHeader}
@@ -194,16 +200,18 @@ import Link from 'next/link'
             </p>
        
           </div>
-          <Image src={photo} className={styles.servicesImg}/>
+          <div className={styles.imageBox}>
+            <Image src={bf} className={styles.servicesImg}/>
+          </div>
         </div>
 
       {
-        /**CATTRAIL */
+        /**CATTRAIL Project */
       }
 
         <div className={styles.service}>
-          <div>
-
+          <div className={styles.serviceHeaderBox}>
+          
             <Link href={'https://www.cattrail.com/'} target='blank'>
               <div 
                 className={styles.projectHeader}
@@ -226,7 +234,11 @@ import Link from 'next/link'
             </p>
 
           </div>
-          <Image src={photo} className={styles.servicesImg}/>
+
+          <div className={styles.imageBox}>
+            <Image src={ct} className={styles.servicesImg}/>
+          </div>
+
         </div>
 
       </section>
@@ -235,28 +247,28 @@ import Link from 'next/link'
         /**BOTTOM TEXT */
       }
       <footer ref={footer} className={styles.footer}>
-        <div ref={footerDiv}>
-
-        <Fade direction='up' triggerOnce>
-          <h2>There's More!</h2>
-          <p>To learn more about a particular project or to view my full array of repositories, visit my github at 
-          <Link 
-            href={'https://github.com/Fadeleke57?tab=repo'} 
-            target='blank'
-            onMouseEnter={() => handleHover(3)} 
-            onMouseLeave={() => handleMouseLeave(3)}
-            style={{marginLeft: 6 + 'px'}}
-          >
-            https://github.com/Fadeleke57 
-            <FontAwesomeIcon 
-              icon={faArrowRight} 
-              ref={el => projectArrows.current[3] = el}
-              className={styles.projectArrow}
-            />
-          </Link>
-          </p>
-        </Fade>
-
+        <div ref={endBox}> 
+          <div className={styles.textMask}>
+            <div ref={textContent} className={styles.textContent}>
+              <h2>There's More!</h2>
+              <p>To learn more about a particular project or to view my full array of repositories, visit my github at 
+              <Link 
+                href={'https://github.com/Fadeleke57?tab=repo'} 
+                target='blank'
+                onMouseEnter={() => handleHover(3)} 
+                onMouseLeave={() => handleMouseLeave(3)}
+                style={{marginLeft: 6 + 'px'}}
+              >
+                https://github.com/Fadeleke57 
+                <FontAwesomeIcon 
+                  icon={faArrowRight} 
+                  ref={el => projectArrows.current[3] = el}
+                  className={styles.projectArrow}
+                />
+              </Link>
+              </p>
+            </div>
+          </div>
         </div>
       </footer>
 

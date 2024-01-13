@@ -55,17 +55,19 @@ function Skills() {
             });
 
             gsap.from(my.current, {
-                x: -200,
+                x: -10 + 'vw',
+                ease: 'power1.in',
                 scrollTrigger: {
                     trigger: skillsSection.current,
                     start: "top 40%",
-                    end: '+=300',
+                    end: '+=350',
                     scrub: true,
                 }
             });
 
             gsap.from(skills.current, {
                 x: 10 + 'vw',
+                ease: "none",
                 scrollTrigger: {
                     trigger: skillsSection.current,
                     start: "top 40%",
@@ -84,7 +86,7 @@ function Skills() {
             <h1 ref={my} className={styles.gradient}>My</h1>
             <h1 ref={skills}>Skills</h1>
                 <p>
-                   I believe anything can be learned through the internet, with projects to suplement gained knowledge. Here are some of the technical skills that I am currently well-versed in.
+                   I believe anything can be learned through the internet, with projects to supplement gained knowledge. Below are some of the technical skills that I am currently well-versed in..
                 </p>           
             </div>
 

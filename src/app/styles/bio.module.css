@@ -64,6 +64,20 @@
     margin-bottom: 2.5em;
 }
 
+.textMask {
+    overflow-x: hidden;
+    height: fit-content;
+    position: relative;
+    height: 8em;
+}
+
+.textContent {
+    position: absolute;
+    white-space: nowrap; /* might need to add media query */
+    transform: translateX(-100%); /* might need to add media query */
+    text-rendering: optimizeLegibility;
+}
+
 @media screen and (max-width: 900px) {
     .container {
       grid-template-columns: 1fr;

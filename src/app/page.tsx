@@ -4,7 +4,6 @@ import Bio from './components/Bio'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Landing from './components/Landing'
-import Navbar from './components/Navbar'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 
@@ -15,10 +14,10 @@ import { useGSAP } from "@gsap/react";
 export default function Home() {
 
   useEffect(()=>{
-    //Initialize Lenis smooth scrolling
+    //initialize Lenis smooth scrolling
     const lenis = new Lenis();
 
-    function raf(time: number) {
+    function raf(time: number) { //makes animations smoother without paying for GSAP smooth scroll
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
@@ -28,8 +27,6 @@ export default function Home() {
 
   return (
     <main>
-      
-      <Navbar/>
       <Landing/>
       <Bio/>
       <Projects/>

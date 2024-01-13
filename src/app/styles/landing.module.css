@@ -4,26 +4,20 @@
     justify-content: center;
     min-height: 100vh;
     position: relative; 
-}
-
-.contentWrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 2em
+  
 }
 
 .landingHeader {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 800px;
 }
 
 .landingHeader h1 {
     font-size: 6em;
     letter-spacing: .02em;
-    background: -webkit-linear-gradient(#000000, #1e1e1e);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
     text-align: center;
 }
 
@@ -72,6 +66,58 @@
 .icon {
     font-size: 2em;
 }
+
+.introMask {
+    overflow: hidden;
+    height: 2.78em;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.introContent {
+    white-space: nowrap;
+}
+
+.textMask {
+    overflow: hidden;
+    width: 400px; /* might need to add media query */
+    height: 2.4em; /* might need to add media query */
+    position: relative; /* might need to add media query */
+}
+
+.textContent {
+    position: absolute;
+    white-space: nowrap; /* might need to add media query */
+    transform: translateX(-100%); /* might need to add media query */
+    color:#2e1edd;
+}
+
+.subtitleAnimation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em; /*adjust for media*/
+}
+
+.maskPrefix {
+    height: 50px;
+    overflow: hidden;
+}
+
+.landingIcons {
+    white-space: nowrap;
+    position: absolute;
+    top: 2em;
+    right: 2em;
+  }
+  
+  .landingIcon {
+    margin-right: 0.5em;
+    font-size: 2.7em;
+    color: #000000;
+    white-space: nowrap;
+  }
 
 @media screen and (max-width: 800px) {
     .landingHeader h1 {

@@ -55,7 +55,7 @@ function Footer() {
       <div className={styles.formContainer}>
 
         <div className={styles.formHeader}>
-        <Fade direction='left' triggerOnce>
+        <Fade direction='up' triggerOnce>
           <h2>Get In Touch</h2>
           <br></br>
           <p>fadeleke57@gmail.com</p>
