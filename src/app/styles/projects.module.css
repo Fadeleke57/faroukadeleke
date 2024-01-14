@@ -128,6 +128,11 @@
   white-space: wrap;
 }
 
+.infoBox {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+}
 
 @media screen and (max-width: 600px) {
   .subTitle, .footer p {
@@ -145,6 +150,10 @@
   
   .imageBox {
     padding: 3em 4em 4em 4em;
+  }
+
+  .infoBox {
+    display: none;
   }
 
 }

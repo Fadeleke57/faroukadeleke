@@ -19,6 +19,8 @@ import network from '../../../public/photos/network.jpg'
 import { useGSAP } from "@gsap/react";
 import Link from 'next/link'
 
+import Info from '../components/ProjectDetails'
+
   function Projects() {
    
     const heroSection = useRef(null) //ref for title and subtitle box
@@ -54,12 +56,12 @@ import Link from 'next/link'
           },
         });      
         
-        const subTitleText = new SplitType(subtitle.current, {
-          types: "chars" 
+        const subTitleText = new SplitType(subtitle.current, { //words instead of chars so letters dont get cut off
+          types: "words" 
         });
 
         // subtitle animation
-        gsap.from(subTitleText.chars, {
+        gsap.from(subTitleText.words, {
           opacity: 0.2, //chars become become black as user scrolls
           stagger: 0.1,
           scrollTrigger: {
@@ -139,9 +141,9 @@ import Link from 'next/link'
       <section className={styles.services}>
 
         <div className={styles.serviceAnim}>
-
           <div className={styles.serviceHeaderBox}>
-          
+
+          <div className={styles.infoBox}><Info></Info></div>
             <Link href={'https://github.com/Fadeleke57/bonsai-finance-app'} target='blank'>
               <div 
                 className={styles.projectHeader}
@@ -175,9 +177,9 @@ import Link from 'next/link'
       }
 
         <div className={styles.serviceAnim}>
-
           <div className={styles.serviceHeaderBox}>
-      
+          
+            <div className={styles.infoBox}><Info></Info></div>
             <Link href={'https://stock-tracking-app.vercel.app/'} target='blank'>
               <div 
                 className={styles.projectHeader}
@@ -211,7 +213,7 @@ import Link from 'next/link'
 
         <div className={styles.service}>
           <div className={styles.serviceHeaderBox}>
-          
+            <div className={styles.infoBox}><Info></Info></div>
             <Link href={'https://www.cattrail.com/'} target='blank'>
               <div 
                 className={styles.projectHeader}

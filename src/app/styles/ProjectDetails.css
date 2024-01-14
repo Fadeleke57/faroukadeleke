@@ -1,0 +1,124 @@
+
+.tooltip {
+    position: relative;
+    text-align: center;
+    padding: 0.5em;
+  }
+  
+  .tooltip-activator {
+    font-size: 2.1em;
+    color: #1f46e2;
+    cursor: pointer;
+  }
+  
+  .tooltip-popup {
+    width: 18em;
+    position: absolute;
+    top: 7em;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 2em;
+    text-align: left;
+    border-radius: 1em;
+    box-shadow: 0 0 3em rgba(0, 0, 0, .1);
+    z-index: 3;
+  }
+  
+  .tooltip h1 {
+    margin: 0 0 0.5em 0;
+  }
+  
+  .tooltip a {
+    display: block;
+    margin: 0.5em 0;
+    text-decoration: none;
+    color: #2f78ff;
+  }
+  
+  .tooltip a:hover {
+    text-decoration: underline;
+  }
+  
+  .tooltip ul {
+    list-style: none;
+    margin: 2em 0;
+    font-size: 0.9em;
+  }
+  
+  .tooltip li {
+    margin: 0.7em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .tooltip li span:nth-child(2) {
+    font-weight: bold;
+  }
+  
+  .tooltip h3 {
+    margin: 1em 0;
+  }
+  
+  .address-info p {
+    font-size: 0.9em;
+    margin: 0.5em 0;
+  }
+  
+  .tooltip button {
+    display: block;
+    padding: 0.7em 2em;
+    background: #2f78ff;
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 2em auto 0em auto;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .tooltip button:hover {
+    background: #1e41ce;
+  }
+  
+  .tooltip-popup::before {
+    content: '';
+    position: absolute;
+    top: -1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 25px solid #fff;
+  }
+  
+  .tooltip-popup {
+    opacity: 0;
+    display: none;
+  }
+  
+  .tooltip:hover .tooltip-popup {
+    animation: fadeIn 0.3s linear forwards;
+    opacity: 1;
+    display: block;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+    10% {
+      display: block;
+      opacity: none;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

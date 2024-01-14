@@ -59,7 +59,7 @@ function Skills() {
                 ease: 'power1.in',
                 scrollTrigger: {
                     trigger: skillsSection.current,
-                    start: "top 40%",
+                    start: "top 55%",
                     end: '+=350',
                     scrub: true,
                 }
@@ -70,7 +70,7 @@ function Skills() {
                 ease: "none",
                 scrollTrigger: {
                     trigger: skillsSection.current,
-                    start: "top 40%",
+                    start: "top 55%",
                     end: '+=350',
                     scrub: true,
                 }
