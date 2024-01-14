@@ -58,8 +58,11 @@ function Footer() {
         <Fade direction='up' triggerOnce>
           <h2>Get In Touch</h2>
           <br></br>
+          <h3>Have a question? Inquiry? Send a message here.</h3>
+          <br></br><br></br>
           <p>fadeleke57@gmail.com</p>
           <p>(732) 666-8394</p>
+         
         </Fade>
 
         </div>

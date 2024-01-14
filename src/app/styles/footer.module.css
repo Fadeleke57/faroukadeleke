@@ -19,8 +19,9 @@
 }   
 
 .footer h3 {
-    font-size: 2em;
+    font-size: 1.7em;
     color: black;
+    max-width: 350px;
 }
   
 .container {
@@ -40,7 +41,7 @@
     flex-basis: 60%;
 }
 
-.formHeader p,.formHeader h2 {
+.formHeader p,.formHeader h2, .formHeader h3 {
     text-align: left;
 }
 
@@ -143,7 +144,7 @@
         gap: 1em;
     }
     
-    .formHeader p,.formHeader h2 {
+    .formHeader p,.formHeader h2, .formHeader h3 {
         text-align: center;
     }
     

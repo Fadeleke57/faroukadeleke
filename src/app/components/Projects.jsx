@@ -113,7 +113,7 @@ import Info from '../components/ProjectDetails'
         duration: 0.2
     })
     };
-  
+    
     //resets when cursor leaves link
     const handleMouseLeave = (index) => {
       gsap.to(projectArrows.current[index], {
@@ -122,14 +122,22 @@ import Info from '../components/ProjectDetails'
       });
     };
 
+    //features for each project
+    const lstmFeatures = [ "Pytorch", "AlphaVantage","LSTM", "RNN", "REST API", "Django Rest Framework", "NumPy"];
+
+    const bfFeatures = [ "NextJS", "AlphaVantage","Sentiment Anlayis", "News", "Historical Analysis"];
+
+    const ctFeatures = [ "NextJS", "Vercel","GSAP", "Project Management", "Agile", "EmailJS", "Figma"];
+
   return (
     <div className={styles.projects}>
-
+      
+      {/**GSAP animation header */}
       <section ref={heroSection} className={styles.hero} id='Bio'>
 
-        <div ref={title}><h1 className={styles.title}><span className={styles.gradient}>My</span> Projects</h1></div>
+        <div ref={title}><h1 className={styles.title}><span className={styles.gradient}>Latest</span> Projects</h1></div>
         <p ref={subtitle} className={styles.subTitle}>
-          I strive to put one-hundred percent effort into every project that I delve into, focusing on honing my skills over subpar work. Below are some of the projects I have completed in and outside of the classroom.. 
+          I strive to put one-hundred percent effort into every project that I delve into, focusing on honing my skills over subpar work. Below are some of the projects I have completed outside of the classroom.. 
         </p>
 
       </section>
@@ -143,7 +151,14 @@ import Info from '../components/ProjectDetails'
         <div className={styles.serviceAnim}>
           <div className={styles.serviceHeaderBox}>
 
-          <div className={styles.infoBox}><Info></Info></div>
+            <div className={styles.infoBox}>
+              <Info 
+                pName={'LSTM API'}
+                date={'08/23 - Ongoing'}
+                features={lstmFeatures}
+              />
+            </div>
+
             <Link href={'https://github.com/Fadeleke57/bonsai-finance-app'} target='blank'>
               <div 
                 className={styles.projectHeader}
@@ -160,7 +175,7 @@ import Info from '../components/ProjectDetails'
               </div>
             </Link>
 
-            <p>
+            <p className={styles.serviceText}>
               Specialized stock price prediction tool using PyTorch and NumPy, focusing on LSTM neural networks to analyze and predict stock market trends.
             </p>
 
@@ -168,6 +183,7 @@ import Info from '../components/ProjectDetails'
 
           <div className={styles.imageBox}>
             <Image src={network} className={styles.servicesImg}/>
+            <div className={styles.infoBoxMobile}><Info></Info></div>
           </div>
 
         </div>
@@ -178,8 +194,10 @@ import Info from '../components/ProjectDetails'
 
         <div className={styles.serviceAnim}>
           <div className={styles.serviceHeaderBox}>
-          
-            <div className={styles.infoBox}><Info></Info></div>
+
+            <div className={styles.infoBox}>
+              <Info pName={'Bonsai Finance'} date={'06/23 - 08/23'} features={bfFeatures}/>
+            </div>
             <Link href={'https://stock-tracking-app.vercel.app/'} target='blank'>
               <div 
                 className={styles.projectHeader}
@@ -197,13 +215,14 @@ import Info from '../components/ProjectDetails'
               </div>
             </Link>
 
-            <p>
+            <p className={styles.serviceText}>
               Platform powered by the AlphaVantage API, offering real-time stock information and relavant news to users.
             </p>
        
           </div>
           <div className={styles.imageBox}>
             <Image src={bf} className={styles.servicesImg}/>
+            <div className={styles.infoBoxMobile}><Info></Info></div>
           </div>
         </div>
 
@@ -213,7 +232,15 @@ import Info from '../components/ProjectDetails'
 
         <div className={styles.service}>
           <div className={styles.serviceHeaderBox}>
-            <div className={styles.infoBox}><Info></Info></div>
+
+            <div className={styles.infoBox}>
+              <Info 
+                pName={'Cattrail Website'} 
+                date={'10/23 - 12/23'} 
+                features={ctFeatures}
+              />
+            </div>
+
             <Link href={'https://www.cattrail.com/'} target='blank'>
               <div 
                 className={styles.projectHeader}
@@ -231,7 +258,7 @@ import Info from '../components/ProjectDetails'
               </div>
             </Link>
 
-            <p>
+            <p className={styles.serviceText}>
               Website built with NextJs for Cat Trail Capital LLC, an investment management company. Deployed on Vercel.
             </p>
 
@@ -239,6 +266,7 @@ import Info from '../components/ProjectDetails'
 
           <div className={styles.imageBox}>
             <Image src={ct} className={styles.servicesImg}/>
+            <div className={styles.infoBoxMobile}><Info></Info></div>
           </div>
 
         </div>

@@ -83,9 +83,10 @@ function Landing() {
     
     gsap.to( arterisk, { //arterisk goes down and changes color
       delay: 2.5,
-      y: 25,
+      y: '25%',
       color: '#2e1edd',
-      ease: 'linear'
+      duration: 0.8,
+      ease: "bounce.out", //coolest ease by far
     });
     
     //'e' only turns a color while its rotating
@@ -119,7 +120,7 @@ function Landing() {
     .to(buRef.current, {
       x: '2%', // Moves 'Boston University' from behind mask
       duration: 1, 
-      ease: "linear", //easing for moving out
+      ease: "power2.out", //easing for moving out
     })
     .to(prefix2Split.chars, {
       opacity: 1,   //moves 'Freelance' up from behind mask
@@ -148,7 +149,7 @@ function Landing() {
 
           <div className={styles.landingHeader}>
 
-            <div className={styles.introMask} style={{marginBottom: '1em'}}>
+            <div className={styles.introMask}>
               <div className={styles.introContent} >
                 <p ref={introRef}>Hello! I'm..</p>
                 <p ref={intro2Ref} style={{marginTop: '0.2em'}}>Greetings!</p>
@@ -159,26 +160,29 @@ function Landing() {
               <h1 ref={namesRef}>Farouk * Adeleke</h1>
             </div>
 
-            <div className={styles.subtitleAnimation} style={{marginTop: '1em'}}>
-              <div className={styles.maskPrefix}>
-                <p ref={prefixRef} style={{transform: 'scaleY(0)'}}>Student At</p>
-              </div>
+            <div className={styles.subtitleAnimation} style={{marginTop: '1.5em'}}>
+              <div className={styles.animationWrapper}>
+                <div className={styles.maskPrefix}>
+                  <p ref={prefixRef} style={{transform: 'scaleY(0)'}}>Student At</p>
+                </div>
 
-              <div className={styles.textMask}>
-                <p ref={buRef} className={styles.textContent}>Boston University</p>
+                <div className={styles.textMaskTop}>
+                  <p ref={buRef} className={styles.textContent}>Boston University</p>
+                </div>
               </div>
             </div>
 
             <div className={styles.subtitleAnimation}>
-              <div className={styles.maskPrefix}>
-                <p ref={prefix2Ref} style={{transform: 'translateY(100%)'}}>Freelance</p>
-              </div>
+              <div className={styles.animationWrapper}>
+                <div className={styles.maskPrefix}>
+                  <p ref={prefix2Ref} style={{transform: 'translateY(100%)'}}>Freelance</p>
+                </div>
 
-              <div className={styles.textMask}>
-                <p ref={webDevRef} className={styles.textContent} >Web Development</p>
+                <div className={styles.textMask}>
+                  <p ref={webDevRef} className={styles.textContent} >Web Development</p>
+                </div>
               </div>
             </div>
-
           </div>
 
       <div className={styles.goDown}>

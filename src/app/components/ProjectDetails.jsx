@@ -2,51 +2,48 @@
 import { useEffect, useState, useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { Power2 } from 'gsap'
 import '../styles/ProjectDetails.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link'
+import dynamic from 'next/dynamic';
 
 
-function projectDetails() {
+function projectDetails({pName, date, repository, features}) {
+
+  const infoRef = useRef(null);
+
+  useGSAP(() => {
+    //fade in and out for info icons
+    const infoTL = gsap.timeline({repeat: -1, yoyo: true, ease: "power2.inOut" })
+
+    infoTL.to(infoRef.current, {
+      opacity: 0.6,
+      duration: 0.8,
+    });
+  });
+
   return (
-        <div className="tooltip">
-    
-        <FontAwesomeIcon icon={faInfoCircle} className='tooltip-activator'/>
+    <div className="quick-tooltip">
+        <FontAwesomeIcon ref={infoRef} icon={faInfoCircle} className='tooltip-activator'/>
+        <div className="quick-tooltip-popup left">
 
-        <div className="tooltip-popup">
-        <h1>HJL-23</h1>
-        <p>Time 21:34, December 1 2023</p>
-        <a href="#">Postpone</a>
-        <ul>
-            <li>
-            <span>Price</span>
-            <span>54 900 P</span>
-            </li>
-            <li>
-            <span>Distance</span>
-            <span>1843 km</span>
-            </li>
-            <li>
-            <span>Discount</span>
-            <span>12%</span>
-            </li>
-            <li>
-            <span>Fast Delivery</span>
-            <span>Yes</span>
-            </li>
-        </ul>
-        <h3>Delivery Address Info</h3>
-        <div className="address-info">
-            <p>215 E Tasman Dr Po Box 65502</p>
-            <p>CA 95134 San Jose</p>
-            <p>+7 (495) 333-43-64</p>
-            <p>John Doe</p>
+            <h3>{pName}</h3>
+            <h4>{date}</h4>
+            
+            <div className='features'>
+
+                {features? 
+                    features.map((feature, index) => (
+                        <p key={index}>{feature}</p>
+                    ))
+                : ''}
+                
+            </div>   
         </div>
-        <button>Change</button>
-        </div>
-        
     </div>
   )
 }
 
-export default projectDetails
+export default dynamic (() => Promise.resolve(projectDetails), {ssr: false})

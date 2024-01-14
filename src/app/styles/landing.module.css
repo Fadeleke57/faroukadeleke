@@ -4,7 +4,7 @@
     justify-content: center;
     min-height: 100vh;
     position: relative; 
-  
+    padding: 4em;
 }
 
 .landingHeader {
@@ -12,7 +12,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 800px;
+    width: 100%;
+    padding: 1em;
+
 }
 
 .landingHeader h1 {
@@ -70,18 +72,28 @@
 .introMask {
     overflow: hidden;
     height: 2.78em;
-    width: 400px;
+    max-width: 350px;
     display: flex;
     justify-content: center;
+ 
 }
 
 .introContent {
     white-space: nowrap;
+
 }
 
 .textMask {
     overflow: hidden;
-    width: 400px; /* might need to add media query */
+    width: 396px; /* might need to add media query */
+    height: 2.4em; /* might need to add media query */
+    position: relative; /* might need to add media query */
+
+}
+
+.textMaskTop {
+    overflow: hidden;
+    width: 382px; /* might need to add media query */
     height: 2.4em; /* might need to add media query */
     position: relative; /* might need to add media query */
 }
@@ -96,13 +108,22 @@
 .subtitleAnimation {
     width: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
     font-size: 1.5em; /*adjust for media*/
+
+}
+
+.animationWrapper {
+    display: flex;
+    flex-direction: row;
+
 }
 
 .maskPrefix {
     height: 50px;
     overflow: hidden;
+  
 }
 
 .landingIcons {
@@ -112,19 +133,52 @@
     right: 2em;
   }
   
-  .landingIcon {
+.landingIcon {
     margin-right: 0.5em;
     font-size: 2.7em;
     color: #000000;
     white-space: nowrap;
-  }
+}
 
-@media screen and (max-width: 800px) {
+.landingIcon:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 850px) {
     .landingHeader h1 {
         font-size: 3em;
         font-size: clamp(3em, 4vw, 5em);
     }
+
     .landingHeader h3 {
         font-size: 1.3em;
     }
-}
+
+    .landingHeader p {
+        font-size: 1em;
+    }
+
+    .landing {
+        padding: 0;
+    }
+
+    .introMask {
+        height: 1.5em;
+        margin-bottom: 2em;
+    }
+
+    .textMask {
+        width: 170px;
+        height: 1.35em;
+      
+    }
+
+    .textMaskTop {
+        width: 165px;
+        height: 1.35em; 
+    }
+
+    .maskPrefix {
+        height: 1.35em;
+    }
+}   

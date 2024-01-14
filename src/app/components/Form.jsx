@@ -20,9 +20,9 @@ export const Form = () => {
   const messageInput = form.querySelector("#message");
 
   // Get needed data from email JS
- // const publicKey = "iDWeRGfz2ZBgjaR8R";
- // const serviceID = "service_wz5b8es";
- // const templateID = "template_0yn1kqu";
+  const publicKey = "iDWeRGfz2ZBgjaR8R";
+  const serviceID = "service_4nr4jqa";
+  const templateID = "template_u9dom7i";
 
   // Initialize email JS with public key (if not initialized already)
   emailjs.init(publicKey);

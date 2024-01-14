@@ -57,10 +57,10 @@
   padding: 2em 2em 0 2em;
   border-radius: 1em 1em 0em 0em;
   text-align: center;
-  position: relative;
+  width: 100%;
 }
 
-.service div p, .serviceAnim div p {
+.serviceText, .serviceAnimText {
   margin: 2em auto 0;
   max-width: 600px;
   font-size: 1.1em;
@@ -71,6 +71,7 @@
 }
 
 .imageBox {
+  position: relative;
   padding: 3em 6em 4em 6em;
 }
 
@@ -130,8 +131,16 @@
 
 .infoBox {
   position: absolute;
-  top: 1em;
-  left: 1em;
+  top: 1.5em;
+  left: 1.5em;
+  font-size: 1.3em;
+}
+
+.infoBoxMobile {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  display: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -154,6 +163,10 @@
 
   .infoBox {
     display: none;
+  }
+
+  .infoBoxMobile {
+    display: block;
   }
 
 }
