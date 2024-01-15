@@ -1,7 +1,5 @@
 'use client'
 import styles from '../styles/Landing.module.css'
-import Image from 'next/image'
-import profilePic from '../../../public/profilePic.jpg'
 
 import { Fade } from "react-awesome-reveal";
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
