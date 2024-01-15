@@ -83,27 +83,41 @@
 
     }
     .gallery {
+        justify-content: center;
         flex-wrap: wrap;
-        gap: 1em;
-        padding: 2em 4em
+        gap: 1.3em;
+        padding: 2em 2em;
     }
     .galleryImg {
-       
         padding: 0;
         height: 10vh;
+
     }
     .css {
-      
         padding: 0;
         height: fit-content;
     }
     .js {
-     
+        width: 7em;
         padding: 0;
         height: fit-content;
     }
     .hero {
         height: fit-content;
-    
+    }
+    .hero h1 {
+        font-size: 6em;
+    }
+    .skillsHeader {
+        text-align: left;
+    }
+    .skillsHeader p {
+        margin: 2em 0em;
+        font-size: 1.2em;
+        line-height: 2em;
+        max-width: 500px;
+    }
+    .skillsSection {
+        overflow-x: hidden;
     }
 }

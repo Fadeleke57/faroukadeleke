@@ -89,5 +89,18 @@
     .formButton {
         margin-top: 2em;
         float: left;
+        width: 100%;
+    }
+
+    .formButton {
+        border-color: #2e1edd;
+        color: white;
+        background-color: #2e1edd;
+    }
+    
+    .formButton:hover {
+        background-color: transparent;
+        color: #2e1edd;
+        border-color: #2e1edd;
     }
 }

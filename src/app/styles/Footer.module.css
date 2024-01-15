@@ -10,12 +10,9 @@
 }
   
 .footer h2 {
-    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
     font-size: 3em;
-    font-size: clamp(3em, 4vw, 5em);
+    font-size: clamp(6em, 4vw, 5em);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }   
 
 .footer h3 {
@@ -45,6 +42,13 @@
 
 .small {
     font-size: 1em;
+}
+
+.gradient {
+    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .formHeader p {
@@ -151,5 +155,10 @@
     }
     .footer {
         padding: 5em 0 1em 0;
+    }
+    .footer h2 {
+        font-size: 5.7em;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        letter-spacing: 0.02em;
     }
 }
