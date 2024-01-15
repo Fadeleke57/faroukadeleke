@@ -32,7 +32,7 @@ function Skills() {
     const galleryWrapper = useRef(null);
 
     gsap.registerPlugin(ScrollTrigger);
-
+    /*
     useGSAP(() => {
         // Ensure elements are loaded
         if (gallery.current && galleryWrapper.current) {
@@ -76,7 +76,7 @@ function Skills() {
                 }
             });
         }
-    });
+    }); */
 
   return (
     <div className={styles.skills} ref={skillsSection}>

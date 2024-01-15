@@ -60,8 +60,8 @@ function Footer() {
           <br></br>
           <h3>Have a question? Inquiry? Send a message here.</h3>
           <br></br><br></br>
-          <p>fadeleke57@gmail.com</p>
-          <p>(732) 666-8394</p>
+          <small className={styles.small}>fadeleke57@gmail.com</small>
+          <small className={styles.small}>(732) 666-8394</small>
          
         </Fade>
 

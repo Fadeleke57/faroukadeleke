@@ -1,5 +1,5 @@
 'use client'
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
@@ -7,8 +7,6 @@ import SplitType from 'split-type';
 import styles from '../styles/Projects.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-
-import { Fade } from "react-awesome-reveal";
 
 import Image from 'next/image';
 import ct from '../../../public/photos/cattrail.png'
@@ -20,8 +18,26 @@ import { useGSAP } from "@gsap/react";
 import Link from 'next/link'
 
 import Info from '../components/ProjectDetails'
+import Modal from '../components/Modal'
 
   function Projects() {
+
+    const [modalContent, setModalContent] = useState({
+      show: false,
+      pName: '',
+      date: '',
+      features: [],
+      repository: '',
+      demo: ''
+    });
+
+    const openModal = (projectDetails) => {
+      setModalContent({ ...projectDetails, show: true });
+    };
+  
+    const closeModal = () => {
+      setModalContent({ ...modalContent, show: false });
+    };
    
     const heroSection = useRef(null) //ref for title and subtitle box
     const title = useRef(null) //header ref
@@ -133,7 +149,7 @@ import Info from '../components/ProjectDetails'
     <div className={styles.projects}>
       
       {/**GSAP animation header */}
-      <section ref={heroSection} className={styles.hero} id='Bio'>
+      <section ref={heroSection} className={styles.hero}>
 
         <div ref={title}><h1 className={styles.title}><span className={styles.gradient}>Latest</span> Projects</h1></div>
         <p ref={subtitle} className={styles.subTitle}>
@@ -152,10 +168,13 @@ import Info from '../components/ProjectDetails'
           <div className={styles.serviceHeaderBox}>
 
             <div className={styles.infoBox}>
-              <Info 
-                pName={'LSTM API'}
-                date={'08/23 - Ongoing'}
-                features={lstmFeatures}
+            <Info 
+                onClick={() => openModal({
+                  pName: 'LSTM API',
+                  date: '08/23 - Ongoing',
+                  features: lstmFeatures,
+                  repository: 'https://github.com/Fadeleke57/bonsai-finance-app'
+                })}
               />
             </div>
 
@@ -183,7 +202,16 @@ import Info from '../components/ProjectDetails'
 
           <div className={styles.imageBox}>
             <Image src={network} className={styles.servicesImg}/>
-            <div className={styles.infoBoxMobile}><Info></Info></div>
+              <div className={styles.infoBoxMobile}>
+              <Info 
+                onClick={() => openModal({
+                  pName: 'LSTM API',
+                  date: '08/23 - Ongoing',
+                  features: lstmFeatures,
+                  repository: 'https://github.com/Fadeleke57/bonsai-finance-app'
+                })}
+              />
+            </div>
           </div>
 
         </div>
@@ -196,7 +224,15 @@ import Info from '../components/ProjectDetails'
           <div className={styles.serviceHeaderBox}>
 
             <div className={styles.infoBox}>
-              <Info pName={'Bonsai Finance'} date={'06/23 - 08/23'} features={bfFeatures}/>
+            <Info 
+                  onClick={() => openModal({
+                    pName: 'Bonsai Finance',
+                    date: '06/23 - 08/23',
+                    features: bfFeatures,
+                    repository: 'https://github.com/Fadeleke57/stock-tracking-app',
+                    demo: 'https://stock-tracking-app.vercel.app/'
+                  })}
+              />
             </div>
             <Link href={'https://stock-tracking-app.vercel.app/'} target='blank'>
               <div 
@@ -222,7 +258,17 @@ import Info from '../components/ProjectDetails'
           </div>
           <div className={styles.imageBox}>
             <Image src={bf} className={styles.servicesImg}/>
-            <div className={styles.infoBoxMobile}><Info></Info></div>
+            <div className={styles.infoBoxMobile}>
+              <Info 
+                  onClick={() => openModal({
+                    pName: 'Bonsai Finance',
+                    date: '06/23 - 08/23',
+                    features: bfFeatures,
+                    repository: 'https://github.com/Fadeleke57/stock-tracking-app',
+                    demo: 'https://stock-tracking-app.vercel.app/'
+                  })}
+              />
+            </div>
           </div>
         </div>
 
@@ -234,10 +280,14 @@ import Info from '../components/ProjectDetails'
           <div className={styles.serviceHeaderBox}>
 
             <div className={styles.infoBox}>
-              <Info 
-                pName={'Cattrail Website'} 
-                date={'10/23 - 12/23'} 
-                features={ctFeatures}
+            <Info 
+                onClick={() => openModal({
+                  pName: 'Cattrail Website',
+                  date: '10/23 - 12/23',
+                  features: ctFeatures,
+                  repository: 'https://github.com/Fadeleke57/cattrail',
+                  demo: 'https://www.cattrail.com/'
+                })}
               />
             </div>
 
@@ -266,7 +316,17 @@ import Info from '../components/ProjectDetails'
 
           <div className={styles.imageBox}>
             <Image src={ct} className={styles.servicesImg}/>
-            <div className={styles.infoBoxMobile}><Info></Info></div>
+            <div className={styles.infoBoxMobile} >
+              <Info 
+                onClick={() => openModal({
+                  pName: 'Cattrail Website',
+                  date: '10/23 - 12/23',
+                  features: ctFeatures,
+                  repository: 'https://github.com/Fadeleke57/cattrail',
+                  demo: 'https://www.cattrail.com/'
+                })}
+              />
+            </div>
           </div>
 
         </div>
@@ -301,6 +361,17 @@ import Info from '../components/ProjectDetails'
           </div>
         </div>
       </footer>
+
+      <Modal
+        show={modalContent.show}
+        onClose={closeModal}
+        pName={modalContent.pName}
+        date={modalContent.date}
+        features={modalContent.features}
+        repository={modalContent.repository}
+        demo={modalContent.demo}
+      />
+
 
     </div>
   )

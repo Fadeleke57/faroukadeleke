@@ -149,8 +149,13 @@
     line-height: 27px;
   }
 
+  .textMask {
+    width: 330px;
+    height: 10em;
+  }
+
   .title {
-    font-size: 3.5em;
+    font-size: 3.3em;
   }
 
   .hero {

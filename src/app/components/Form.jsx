@@ -65,10 +65,10 @@ export const Form = () => {
       <p type="Email"><input id="user_email" placeholder="Enter your email.." name="email" autoComplete="true" /></p>
     </div>
     <div>
-      <p type="Message"><input id="message" placeholder="What would you like to tell me.." name="message"></input></p>  
+      <p type="Message"><input id="message" placeholder="What would you like to tell me.." name="message" style={{minHeight: '10em'}}></input></p>  
     </div>
     <div>
-      <button type="submit" className={isMessageSent ? styles.success : ''}>{isMessageSent ? "Message Sent Successfully" : "Send Message" }</button> 
+      <button type="submit" className={isMessageSent ? styles.success : styles.formButton}>{isMessageSent ? "Message Sent Successfully" : "Send Message" }</button> 
     </div>
     </form>
   );

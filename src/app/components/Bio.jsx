@@ -41,23 +41,30 @@ function Bio() {
       });
     });
 
-    const headerWords = new SplitType(namesRef.current, {
-      types: 'words'
-    });
-
-    const headerTL = gsap.timeline({
-      scrollTrigger: {
-        trigger: bioTrigger.current,
-        start: 'top 60%'
+    const adjustHeaderMovement = () => {
+      // Define different movement amounts for different screen widths
+      let movementX = '1.8%'; // Default for larger screens
+    
+      if (window.innerWidth <= 900) { // Example for screens smaller than 480px
+        movementX = 73; // Smaller movement for mobile devices
       }
-    });
-  
-    headerTL.to(namesRef.current, {
-      x: '1.8%',
-      duration: 1,
-      ease: 'power2.out'
-    })
-
+    
+      return movementX;
+    };
+       
+      const headerTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: bioTrigger.current,
+          start: 'top 60%'
+        }
+      });
+    
+      headerTL.to(namesRef.current, {
+        x: () => adjustHeaderMovement(), // Use the function to set the x value
+        duration: 1,
+        ease: 'power2.out'
+      });
+ 
   });
   
   //link arrow ref

@@ -39,10 +39,12 @@
 
 .formHeader {
     flex-basis: 60%;
+    text-align: left;
 }
 
-.formHeader p,.formHeader h2, .formHeader h3 {
-    text-align: left;
+
+.small {
+    font-size: 1em;
 }
 
 .formHeader p {
@@ -142,10 +144,6 @@
 
     .socialMedia {
         gap: 1em;
-    }
-    
-    .formHeader p,.formHeader h2, .formHeader h3 {
-        text-align: center;
     }
     
     .formHeader p {

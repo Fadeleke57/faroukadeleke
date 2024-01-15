@@ -12,9 +12,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
     padding: 1em;
-
 }
 
 .landingHeader h1 {
@@ -170,7 +168,6 @@
     .textMask {
         width: 170px;
         height: 1.35em;
-      
     }
 
     .textMaskTop {

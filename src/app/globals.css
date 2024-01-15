@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    overflow-x: hidden;
+    overflow: hidden;
     background: radial-gradient(200% 200% at left, #0048ff5a, #ffffff 40%);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

@@ -23,6 +23,17 @@ export default function Home() {
     }
 
     requestAnimationFrame(raf);
+      // Reload page on window resize
+      const handleResize = () => {
+        window.location.reload();
+      };
+  
+      window.addEventListener('resize', handleResize);
+  
+      // Cleanup the event listener
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
   }, []);
 
   return (
