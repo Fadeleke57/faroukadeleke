@@ -21,6 +21,18 @@ import Info from '../components/ProjectDetails'
 import Modal from '../components/Modal'
 
   function Projects() {
+    gsap.registerPlugin(ScrollTrigger) 
+  
+    const heroSection = useRef(null) //ref for title and subtitle box
+    const title = useRef(null) //header ref
+    const subtitle = useRef(null) //subtitle ref
+
+    const footer = useRef(null) //footer box ref
+    const endBox = useRef(null) //footer 
+
+    const textContent = useRef(null) //footer text to be translated up
+
+    const projectArrows = useRef([]) //all the arrows in Projects.jsx
 
     const [modalContent, setModalContent] = useState({
       show: false,
@@ -38,28 +50,14 @@ import Modal from '../components/Modal'
     const closeModal = () => {
       setModalContent(prevState => ({ ...prevState, show: false }));
     };
+
    
-    const heroSection = useRef(null) //ref for title and subtitle box
-    const title = useRef(null) //header ref
-    const subtitle = useRef(null) //subtitle ref
-
-    const footer = useRef(null) //footer box ref
-    const endBox = useRef(null) //footer 
-
-    const textContent = useRef(null) //footer text to be translated up
-
-    const projectArrows = useRef([]) //all the arrows in Projects.jsx
-
-    gsap.registerPlugin(ScrollTrigger) 
-
     useGSAP(() => {
-
-      // splits the title text into individual characters
-      const titleText = new SplitType(title.current, {
-        types: "chars"
-      });
-
-      if (title.current) {
+      if (window.innerWidth > 850) {
+        // splits the title text into individual characters
+        const titleText = new SplitType(title.current, {
+          types: "chars"
+        });
         // title animation
         gsap.to(titleText.chars, {
           y: -300, // letter moves up 300 pixels
@@ -86,39 +84,38 @@ import Modal from '../components/Modal'
             scrub: true,
           },
         });
-
-        //adds all animated sections to an array
-        const services = gsap.utils.toArray('.' + styles.serviceAnim);
-        //loops through each service element
-        services.forEach(service => {
-          //services animation
-          gsap.to(service, {
-            scale: 0.8,
-            yPercent: -20,
-            scrollTrigger: {
-              trigger: service,
-              start: "top top",
-              scrub: true,
-              pin: true,
-              // so the services stack
-              pinSpacing: false,
-              end: "bottom top",
-            },
-          });
-        });
-
-        //footer animation
-        gsap.to(textContent.current, {
-          y: "0%", //text goes back to original
+      }
+    
+      //adds all animated sections to an array
+      const services = gsap.utils.toArray('.' + styles.serviceAnim);
+      //loops through each service element
+      services.forEach(service => {
+        //services animation
+        gsap.to(service, {
+          scale: 0.8,
+          yPercent: -10,
           scrollTrigger: {
-            trigger: footer.current,
-            start: "top 70%",
-            duration: 1.4,
-            toggleActions: "play none none none", //only plays once
+            trigger: service,
+            start: "top top",
+            scrub: true,
+            pin: true,
+            // so the services stack
+            pinSpacing: false,
+            end: "bottom top",
           },
         });
-  
-      };
+      });
+
+      //footer animation
+      gsap.to(textContent.current, {
+        y: "0%", //text goes back to original
+        scrollTrigger: {
+          trigger: footer.current,
+          start: "top 70%",
+          duration: 1.4,
+          toggleActions: "play none none none", //only plays once
+        },
+      });
 
     });
 

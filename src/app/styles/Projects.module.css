@@ -158,12 +158,12 @@
     height: 10em;
   }
 
-  .title {
-    font-size: 3.3em;
-  }
-
   .hero {
     padding: 0em 2em;
+  }
+
+  .hero h1 {
+    font-size: 6em;
   }
   
   .imageBox {
@@ -177,5 +177,19 @@
   .infoBoxMobile {
     display: block;
   }
-
+  .title, .subTitle {
+    text-align: left;
+  }
+  .subTitle {
+    margin-top: 3em;
+    font-size: 1.2em;
+    line-height: 2em;
+    max-width: 500px;
+  }
+  .gradient {
+    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
