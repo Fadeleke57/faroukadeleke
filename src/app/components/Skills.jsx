@@ -94,7 +94,7 @@ function Skills() {
         </section>
 
         <section ref={galleryWrapper} className={styles.galleryWrapper}>
-            <div ref={gallery} className={styles.gallery}>
+            <div ref={gallery} className={styles.gallery} >
                 <Image src={react} className={styles.galleryImg}/>
                 <Image src={next} className={styles.galleryImg}/>
                 <Image src={vercel} className={styles.galleryImg}/>
