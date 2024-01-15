@@ -13,25 +13,43 @@ const Modal = ({ show, onClose, pName, date, features, repository, demo }) => {
     return null;
   }
 
+  const modalRef = useRef(null);
+
+  useGSAP(() => {
+    if (show) {
+      gsap.to(modalRef.current, {
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power2.out'
+      });
+    } else {
+      gsap.to(modalRef.current, {
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power2.in'
+      });
+    }
+  }, [show]);
+
   const projectArrows = useRef([])
   //link arrow animation
   const handleHover = (index) => {
-  gsap.to(projectArrows.current[index], {
-    x: 30,
-    duration: 0.2
-  })
+    gsap.to(projectArrows.current[index], {
+        x: 30,
+        duration: 0.2
+    });
   };
 
   //resets when cursor leaves link
   const handleMouseLeave = (index) => {
-  gsap.to(projectArrows.current[index], {
-    x: 0,
-    duration: 0.2
-  });
+    gsap.to(projectArrows.current[index], {
+        x: 0,
+        duration: 0.2
+    });
   };
 
   return (
-    <div className="modal-backdrop">
+    <div className="modal-backdrop" ref={modalRef}>
     <FontAwesomeIcon icon={faXmark} onClick={onClose} className='exit-modal'/>
       <div className="modal-content">
             <h3>{pName}</h3>

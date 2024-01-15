@@ -34,9 +34,9 @@ import Modal from '../components/Modal'
     const openModal = (projectDetails) => {
       setModalContent({ ...projectDetails, show: true });
     };
-  
+    
     const closeModal = () => {
-      setModalContent({ ...modalContent, show: false });
+      setModalContent(prevState => ({ ...prevState, show: false }));
     };
    
     const heroSection = useRef(null) //ref for title and subtitle box
@@ -137,6 +137,25 @@ import Modal from '../components/Modal'
         duration: 0.2
       });
     };
+
+    //modal animations
+    const modalRef = useRef(null);
+
+    const handleClose = () => {
+      gsap.to(modalRef.current, {
+          scaleY: 0,
+          duration: 1,
+          ease: 'power2.in'
+      });
+    };
+  
+    const handleOpen = () => {
+      gsap.to(modalRef.current, {
+          scaleY: 1,
+          duration: 1,
+          ease: 'power2.in'
+      });
+    }; 
 
     //features for each project
     const lstmFeatures = [ "Pytorch", "AlphaVantage","LSTM", "RNN", "REST API", "Django Rest Framework", "NumPy"];

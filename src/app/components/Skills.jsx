@@ -32,10 +32,10 @@ function Skills() {
     const galleryWrapper = useRef(null);
 
     gsap.registerPlugin(ScrollTrigger);
-    /*
+   
     useGSAP(() => {
-        // Ensure elements are loaded
-        if (gallery.current && galleryWrapper.current) {
+        // only do animation on non-mobile screens
+        if (gallery.current && galleryWrapper.current && window.innerWidth > 800) {
             // Calculate total gallery width
             let galleryWidth = gallery.current.offsetWidth;
             // Calculate amount to scroll horizontally
@@ -53,6 +53,7 @@ function Skills() {
                     scrub: true,
                 }
             });
+        
 
             gsap.from(my.current, {
                 x: -10 + 'vw',
@@ -76,7 +77,7 @@ function Skills() {
                 }
             });
         }
-    }); */
+    }); 
 
   return (
     <div className={styles.skills} ref={skillsSection}>

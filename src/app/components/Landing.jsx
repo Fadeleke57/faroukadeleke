@@ -40,7 +40,7 @@ function Landing() {
     
     //intro animation switches between 'Hello! I'm' and 'I go by'
     gsap.to([introRef.current, intro2Ref.current], {
-      y: "-100%", // moves up both texts by 100% so only 1 is showing at a time
+      y: "-110%", // moves up both texts by 100% so only 1 is showing at a time
       duration: 1,
       ease: "power2.out",
       yoyo: true, //so it goes back and forth
