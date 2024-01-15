@@ -3,6 +3,7 @@ html {
 }
 
 body {
+    overflow-x: hidden;
     background: radial-gradient(200% 200% at left, #0048ff5a, #ffffff 40%);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
@@ -33,5 +34,8 @@ a {
 @media screen and (max-width: 600px) {
     html {
       font-size: 14px;
+    }
+    body {
+        overflow-x: visible;
     }
 }
