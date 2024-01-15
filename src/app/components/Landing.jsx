@@ -144,7 +144,7 @@ function Landing() {
       delay: 3,
       opacity: 1,
       duration: 1,
-      translateY: -30
+      y: -20
     });
     
     

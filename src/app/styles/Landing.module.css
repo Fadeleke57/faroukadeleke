@@ -58,7 +58,7 @@
     bottom: 1em;
     text-align: center;
     opacity: 0;
-    transform: translateY(30);
+    transform: translateY(50);
 }
 
 .goDowntext {
@@ -175,6 +175,7 @@
         height: 1.5em;
         margin-bottom: 2em;
         justify-content: left;
+        display: none;
     }
 
     .textMask {
