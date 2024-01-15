@@ -101,7 +101,7 @@ function Bio() {
           </p>
 
           <div className={styles.image}>
-            <Image src={airplane} className={styles.projectsImg}/>
+            <Image src={airplane} className={styles.projectsImg} alt='flight'/>
           </div>
 
           <p>
@@ -122,8 +122,8 @@ function Bio() {
         </div>
 
         <div className={styles.column}>
-          <div className={styles.image}><Image src={cr} className={styles.projectsImg}/></div>
-          <div className={styles.image}><Image src={pier57} className={styles.projectsImg}/></div>
+          <div className={styles.image}><Image src={cr} className={styles.projectsImg} alt='beach'/></div>
+          <div className={styles.image}><Image src={pier57} className={styles.projectsImg} alt='pier57'/></div>
         </div>
 
       </div>

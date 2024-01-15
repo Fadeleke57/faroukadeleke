@@ -9,7 +9,7 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic';
 
 
-function projectDetails({onClick, pName, date, repository, features, type}) {
+function ProjectDetails({onClick, pName, date, repository, features, type}) {
 
   const infoRef = useRef(null);
 
@@ -57,4 +57,4 @@ function projectDetails({onClick, pName, date, repository, features, type}) {
 
 }
 //so the icon doesn't show up before its ready
-export default dynamic (() => Promise.resolve(projectDetails), {ssr: false})
+export default dynamic (() => Promise.resolve(ProjectDetails), {ssr: false})

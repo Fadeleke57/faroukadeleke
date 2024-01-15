@@ -220,7 +220,7 @@ import Modal from '../components/Modal'
           </div>
 
           <div className={styles.imageBox}>
-            <Image src={network} className={styles.servicesImg}/>
+            <Image src={network} className={styles.servicesImg} alt='neural network'/>
               <div className={styles.infoBoxMobile}>
               <Info 
                 onClick={() => openModal({
@@ -276,7 +276,7 @@ import Modal from '../components/Modal'
        
           </div>
           <div className={styles.imageBox}>
-            <Image src={bf} className={styles.servicesImg}/>
+            <Image src={bf} className={styles.servicesImg} alt='bonsai finance'/>
             <div className={styles.infoBoxMobile}>
               <Info 
                   onClick={() => openModal({
@@ -334,7 +334,7 @@ import Modal from '../components/Modal'
           </div>
 
           <div className={styles.imageBox}>
-            <Image src={ct} className={styles.servicesImg}/>
+            <Image src={ct} className={styles.servicesImg} alt='Cat Trail'/>
             <div className={styles.infoBoxMobile} >
               <Info 
                 onClick={() => openModal({

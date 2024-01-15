@@ -130,7 +130,7 @@ function Landing() {
       stagger: 0.1
     })
     .to(webDevRef.current, {
-      x: '2%', // moves 'Web Development' right from behind mask
+      x: "2%", // moves 'Web Development' right from behind mask
       duration: 1,
       ease: "power2.out", 
     });

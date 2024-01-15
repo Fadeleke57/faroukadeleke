@@ -95,17 +95,16 @@ function Skills() {
 
         <section ref={galleryWrapper} className={styles.galleryWrapper}>
             <div ref={gallery} className={styles.gallery} >
-                <Image src={react} className={styles.galleryImg}/>
-                <Image src={next} className={styles.galleryImg}/>
-                <Image src={vercel} className={styles.galleryImg}/>
-                <Image src={html} className={styles.galleryImg}/>
-                <Image src={css} className={styles.css}/>
-                <Image src={javascript} className={styles.js}/>
-                <Image src={java} className={styles.galleryImg}/>
-                <Image src={python} className={styles.galleryImg}/>
-                <Image src={unix} className={styles.galleryImg}/>
-                <Image src={django} className={styles.galleryImg}/>
-
+                <Image src={react} className={styles.galleryImg} alt="react"/>
+                <Image src={next} className={styles.galleryImg} alt="next"/>
+                <Image src={vercel} className={styles.galleryImg} alt="vercel"/>
+                <Image src={html} className={styles.galleryImg} alt="html"/>
+                <Image src={css} className={styles.css} alt="css"/>
+                <Image src={javascript} className={styles.js} alt="js"/>
+                <Image src={java} className={styles.galleryImg} alt="java"/>
+                <Image src={python} className={styles.galleryImg} alt="python"/>
+                <Image src={unix} className={styles.galleryImg} alt="unix"/>
+                <Image src={django} className={styles.galleryImg} alt="django"/>
             </div>
         </section>
 
