@@ -151,7 +151,7 @@ function Landing() {
 
             <div className={styles.introMask}>
               <div className={styles.introContent} >
-                <p ref={introRef}>Hello! I'm..</p>
+                <p ref={introRef}>{"Hello! I'm.."}</p>
                 <p ref={intro2Ref} style={{marginTop: '0.2em'}}>Greetings!</p>
               </div>
             </div>

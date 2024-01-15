@@ -9,11 +9,9 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const Modal = ({ show, onClose, pName, date, features, repository, demo }) => {
-  if (!show) {
-    return null;
-  }
 
   const modalRef = useRef(null);
+  const projectArrows = useRef([])
 
   useGSAP(() => {
     if (show) {
@@ -31,7 +29,7 @@ const Modal = ({ show, onClose, pName, date, features, repository, demo }) => {
     }
   }, [show]);
 
-  const projectArrows = useRef([])
+  
   //link arrow animation
   const handleHover = (index) => {
     gsap.to(projectArrows.current[index], {
@@ -47,7 +45,10 @@ const Modal = ({ show, onClose, pName, date, features, repository, demo }) => {
         duration: 0.2
     });
   };
-
+  
+  if (!show) {
+    return null;
+  }
   return (
     <div className="modal-backdrop" ref={modalRef}>
     <FontAwesomeIcon icon={faXmark} onClick={onClose} className='exit-modal'/>
@@ -97,5 +98,5 @@ const Modal = ({ show, onClose, pName, date, features, repository, demo }) => {
     </div>
   );
 };
-{/*<button onClick={onClose}>Close</button>*/}
+
 export default Modal;

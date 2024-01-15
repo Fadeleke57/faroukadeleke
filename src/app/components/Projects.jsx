@@ -359,7 +359,7 @@ import Modal from '../components/Modal'
         <div ref={endBox}> 
           <div className={styles.textMask}>
             <div ref={textContent} className={styles.textContent}>
-              <h2>There's More!</h2>
+              <h2>{"There's More!"}</h2>
               <p>To learn more about a particular project or to view my full array of repositories, visit my github at 
               <Link 
                 href={'https://github.com/Fadeleke57?tab=repo'} 

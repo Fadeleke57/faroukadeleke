@@ -97,7 +97,7 @@ function Bio() {
             <h2 className={styles.textContent} ref={namesRef}><span className={styles.gradient}>About</span> Me</h2>
           </div>
           <p>
-            I am a student studying Computer Science at Boston University. When I am not in class, I develop structured and engaging websites for a variety of clients.
+            {'I am a student studying Computer Science at Boston University. When I am not in class, I develop structured and engaging websites for a variety of clients.'}
           </p>
 
           <div className={styles.image}>
@@ -105,7 +105,7 @@ function Bio() {
           </div>
 
           <p>
-            From traveling to running, I love to step outside of my comfort zone to experience new things. My technical skills, gained from my studies and projects, transpire from my success as a self starter and my motivation to "make things happen".
+            {'From traveling to running, I love to step outside of my comfort zone to experience new things. My technical skills, gained from my studies and projects, transpire from my success as a self starter and my motivation to "make things happen".'}
           </p>
           <a 
             href="#" 
