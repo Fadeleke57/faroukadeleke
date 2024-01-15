@@ -22,36 +22,23 @@ function Bio() {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  //ref for 'ABOUT ME'
-  const namesRef = useRef(null);
-  // ref for scroll trigger for header animation
-  const bioTrigger = useRef(null);
+  const namesRef = useRef(null); //ref for 'ABOUT ME'
+  const bioTrigger = useRef(null);// ref for scroll trigger for header animation
   
   useGSAP(()=>{
-
-    //image parallax animations
-    const images = gsap.utils.toArray('.' + styles.projectsImg);
-    images.forEach(image => {     //each image in the component goes down 200 pixels as user scrolls
-      gsap.to(image, {
-        y: 200,
-        scrollTrigger: {  //trigger is whatever box the image is in
-          trigger: image.parentElement,
-          scrub: true,  //follows the scrollbar
-        }
+    if (window.innerWidth > 850) {
+      //image parallax animations
+      const images = gsap.utils.toArray('.' + styles.projectsImg);
+      images.forEach(image => {     //each image in the component goes down 200 pixels as user scrolls
+        gsap.to(image, {
+          y: 200,
+          scrollTrigger: {  //trigger is whatever box the image is in
+            trigger: image.parentElement,
+            scrub: true,  //follows the scrollbar
+          }
+        });
       });
-    });
 
-    const adjustHeaderMovement = () => {
-      // Define different movement amounts for different screen widths
-      let movementX = '1.8%'; // Default for larger screens
-    
-      if (window.innerWidth <= 900) { // Example for screens smaller than 480px
-        movementX = 73; // Smaller movement for mobile devices
-      }
-    
-      return movementX;
-    };
-       
       const headerTL = gsap.timeline({
         scrollTrigger: {
           trigger: bioTrigger.current,
@@ -60,11 +47,12 @@ function Bio() {
       });
     
       headerTL.to(namesRef.current, {
-        x: () => adjustHeaderMovement(), // Use the function to set the x value
+        x: '1.8%',
         duration: 1,
         ease: 'power2.out'
       });
- 
+    }
+      
   });
   
   //link arrow ref
@@ -94,8 +82,9 @@ function Bio() {
 
         <div className={styles.column}>
           <div  className={styles.textMask}>
-            <h2 className={styles.textContent} ref={namesRef}><span className={styles.gradient}>About</span> Me</h2>
+            <h2 className={styles.textContent} ref={namesRef}><span className={styles.gradient}>About</span><br className={styles.nameBreak}></br> Me</h2>
           </div>
+          <h2 className={styles.mobileHeader}><span className={styles.gradient}>About</span> Me</h2>
           <p>
             {'I am a student studying Computer Science at Boston University. When I am not in class, I develop structured and engaging websites for a variety of clients.'}
           </p>
@@ -111,7 +100,8 @@ function Bio() {
             href="#" 
             className={styles.btn} 
             onMouseEnter={() => handleHover()} 
-            onMouseLeave={() => handleMouseLeave()}>
+            onMouseLeave={() => handleMouseLeave()}
+          >
             Learn More
             <FontAwesomeIcon 
               icon={faArrowRight} 

@@ -10,7 +10,7 @@ import Link from 'next/link'
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useGSAP } from "@gsap/react";
 import SplitType from 'split-type';
 
@@ -29,17 +29,16 @@ function Landing() {
   const introRef = useRef(null) // 'Hello! I'm' ref
   const intro2Ref = useRef(null) // 'I go by' ref
 
+  const exploreRef = useRef(null) //explore button
+  const iconsRef = useRef(null) //explore button
+
   // useGSAP cleans up animation automatically so its better than useEffect
   useGSAP(() => {
 
-    const introSplit = new SplitType(introRef.current, {
-      types: 'chars'
-    })
-    
     //intro animation switches between 'Hello! I'm' and 'I go by'
     gsap.to([introRef.current, intro2Ref.current], {
-      y: "-110%", // moves up both texts by 100% so only 1 is showing at a time
-      duration: 1,
+      y: "-120%", // moves up both texts by 100% so only 1 is showing at a time
+      duration: 0.7,
       ease: "power2.out",
       yoyo: true, //so it goes back and forth
       yoyoEase: true, //smooooth
@@ -88,20 +87,22 @@ function Landing() {
     });
     
     //'e' only turns a color while its rotating
-    headerTL.to(rotationE, {
-      rotationY: "540",
-      color: '#2e1edd',
-      duration: 1,
-      ease: "linear"
-    })
-    .to(rotationE, {
-      delay: 2,
-      color: 'black',
-      rotationY: "360",
-      duration: 0.5, //fades into black
-      ease: "linear",
-      immediateRender: false
-    });
+    if (window.innerWidth> 850) {
+      headerTL.to(rotationE, {
+        rotationY: "540",
+        color: '#2e1edd',
+        duration: 1,
+        ease: "linear"
+      })
+      .to(rotationE, {
+        delay: 2,
+        color: 'black',
+        rotationY: "360",
+        duration: 0.5, //fades into black
+        ease: "linear",
+        immediateRender: false
+      });
+    }
 
     //subtitle animation timeline
     const subtitleTL = gsap.timeline({stagger: 1, repeat: 0});
@@ -132,15 +133,28 @@ function Landing() {
       duration: 1,
       ease: "power2.out", 
     });
+
+    // icons and explore pop up last
+    gsap.to(iconsRef.current, {
+      delay: 3,
+      opacity: 1,
+      duration: 1
+    })
+    gsap.to(exploreRef.current, {
+      delay: 3,
+      opacity: 1,
+      duration: 1,
+      translateY: -30
+    });
     
-    function resetSettings() {  //function to reset GSAP settings so the 
+    
+    function resetSettings() {  //function to reset GSAP settings
       gsap.set(split.chars, {
         transformOrigin: "center center 0px", //'e' rotates on normal axis
         backfaceVisibility: 'visible' // so the user can see the back of the 'e'
       });
     }
-
-  }, []);
+  }, []);  
 
   return (
     <section className={styles.landing}>
@@ -148,14 +162,14 @@ function Landing() {
           <div className={styles.landingHeader}>
 
             <div className={styles.introMask}>
-              <div className={styles.introContent} >
+              <div className={styles.introContent}>
                 <p ref={introRef}>{"Hello! I'm.."}</p>
                 <p ref={intro2Ref} style={{marginTop: '0.2em'}}>Greetings!</p>
               </div>
             </div>
 
             <div>
-              <h1 ref={namesRef}>Farouk * Adeleke</h1>
+              <h1 ref={namesRef}>Farouk *<br className={styles.nameBreak}></br> Adeleke</h1>
             </div>
 
             <div className={styles.subtitleAnimation} style={{marginTop: '1.5em'}}>
@@ -183,13 +197,13 @@ function Landing() {
             </div>
           </div>
 
-      <div className={styles.goDown}>
-        <Fade triggerOnce delay={4000} direction='up'><Link href={'#Bio'} className={styles.goDowntext}><p>Explore</p></Link></Fade>
-        <Fade triggerOnce delay={4000} direction='up'><Link href={'#Bio'} className={styles.goDowntext}><FontAwesomeIcon icon={faAngleDown} className={styles.icon} beatFade /></Link></Fade>
+      <div className={styles.goDown} ref={exploreRef}>
+        <Link href={'#Bio'} className={styles.goDowntext}><p>Explore</p></Link>
+        <Link href={'#Bio'} className={styles.goDowntext}><FontAwesomeIcon icon={faAngleDown} className={styles.icon} beatFade /></Link>
       </div>
 
-      <Fade>
-      <div className={styles.landingIcons}>
+    
+      <div className={styles.landingIcons} ref={iconsRef}>
         
           <Link href={'https://github.com/Fadeleke57'} target='blank'>
           <FontAwesomeIcon icon={faGithub} className={styles.landingIcon}></FontAwesomeIcon>
@@ -200,7 +214,7 @@ function Landing() {
           </Link>
        
       </div>
-     </Fade>
+    
     </section>
   )
 }
