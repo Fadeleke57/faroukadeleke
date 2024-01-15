@@ -13,7 +13,7 @@ import { useGSAP } from "@gsap/react";
 
 export default function Home() {
 
-  useEffect(()=>{
+  useGSAP(()=>{
     //initialize Lenis smooth scrolling
     const lenis = new Lenis();
 
@@ -23,17 +23,6 @@ export default function Home() {
     }
 
     requestAnimationFrame(raf);
-      // Reload page on window resize
-      const handleResize = () => {
-        window.location.reload();
-      };
-  
-      window.addEventListener('resize', handleResize);
-  
-      // Cleanup the event listener
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
   }, []);
 
   return (
