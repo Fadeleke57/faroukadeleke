@@ -45,12 +45,12 @@ const Modal = ({ show, onClose, pName, date, features, repository, demo }) => {
         duration: 0.2
     });
   };
-  
+
   if (!show) {
     return null;
   }
   return (
-    <div className="modal-backdrop" ref={modalRef}>
+    <div className="modal-backdrop" ref={modalRef} onClick={onClose}>
     <FontAwesomeIcon icon={faXmark} onClick={onClose} className='exit-modal'/>
       <div className="modal-content">
             <h3>{pName}</h3>
@@ -63,7 +63,7 @@ const Modal = ({ show, onClose, pName, date, features, repository, demo }) => {
                 onMouseLeave={() => handleMouseLeave(0)}>
                 <p className='gradient'>
                 Code
-                <FontAwesomeIcon 
+                <FontAwesomeIcon
                     icon={faArrowRight} 
                     style={{marginLeft: '0.5em', color: '#85c4ff'}} 
                     ref={el => projectArrows.current[0] = el} />
