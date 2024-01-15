@@ -47,12 +47,13 @@
     font-weight: 600;
 
     border-color: #2e1edd;
-    color: #2e1edd;
+    color: white;
+    background-color: #2e1edd;
 }
 
 .formButton:hover {
-    background-color: #2e1edd;
-    color: white;
+    background-color: transparent;
+    color: #2e1edd;
     border-color: #2e1edd;
 }
 
