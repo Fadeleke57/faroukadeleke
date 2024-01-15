@@ -197,5 +197,8 @@
     .nameBreak {
         display: block;
     }
+    .goDown {
+        display: none;
+    }
 
 }   
