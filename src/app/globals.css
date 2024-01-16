@@ -38,4 +38,7 @@ a {
     body {
         overflow-x: visible;
     }
+    p, h3 {
+        font-weight: 900;
+    }
 }
