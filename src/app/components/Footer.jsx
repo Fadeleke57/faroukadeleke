@@ -73,7 +73,7 @@ function Footer() {
       <div className={styles.socialMedia}>
 
         <a 
-          href="#" 
+          href="https://discordapp.com/users/faroukade_73606" 
           onMouseEnter={() => handleHover(0)} 
           onMouseLeave={() => handleMouseLeave(0)}
         >
@@ -89,7 +89,7 @@ function Footer() {
         </a>
 
         <a 
-          href="#" 
+          href="https://www.linkedin.com/in/farouk-adeleke/" 
           onMouseEnter={() => handleHover(1)} 
           onMouseLeave={() => handleMouseLeave(1)}
         >
@@ -105,7 +105,7 @@ function Footer() {
         </a>
 
         <a 
-          href="#" 
+          href="https://github.com/Fadeleke57" 
           onMouseEnter={() => handleHover(2)} 
           onMouseLeave={() => handleMouseLeave(2)}
         >

@@ -76,7 +76,7 @@ function Bio() {
 
   return (
 
-    <section ref={bioTrigger} className={styles.projects}>
+    <section ref={bioTrigger} className={styles.projects} id="Bio">
 
       <div className={styles.container}>
 
