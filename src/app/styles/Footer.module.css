@@ -44,12 +44,12 @@
     font-size: 1em;
 }
 
-.gradient {
+/*.gradient {
     background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-}
+}*/
 
 .formHeader p {
     font-size: 1.4em;
