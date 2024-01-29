@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Portfolio Page
 
-## Getting Started
+A NextJS portfolio website detailing my bio, projects, skills, and contact information. Available at https://faroukadeleke.vercel.app/
 
-First, run the development server:
+### GSAP (GreenSock Animation Platform) 
+I had a really fun time developing the GSAP animations for this page - while tedious and meticulous, it gave me a sense of appreciation for the detail that goes into frontend development. Below I will detail how I created the "magic" text slide animation - where the text seems to be sliding out from behind an invisible box. It's a really cool alternative to the traditional "fade right" or "slide right" animations and can be combined with delays to create a really cool staggered effect.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Installation:
+
+Install the required gsap packages to your project:
+
+```
+npm install gsap
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Make sure to import the tools we'll be using for this animation and register the scroll-trigger to your component (*I used "useGSAP" instead of "useEffect" here because it automatically cleans up the animation, which is best practice for using GSAP animations in react.*):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+import { useRef } from 'react';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+gsap.registerPlugin(ScrollTrigger);
+```
 
-To learn more about Next.js, take a look at the following resources:
+Then, in your return, set up ur html (*I add a reference to the text so I can be modified by the GSAP animation*):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+<div className="text-slide-container">
+  <h2 ref={textElement} className="text">Hello World!</h2>
+</div>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+For the container, make sure it has overflow hidden, so the sliding text starts hidden:
 
-## Deploy on Vercel
+```
+.text-slide-container {
+  overflow: hidden;
+}
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+.text {
+  transform: translateX(-100%);
+}
+```
+Animate with GSAP:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+useGSAP(() => {
+  const textElement = useRef(null);
+
+  gsap.to(textElement.current, {
+    x: 0, // Moves the text from -100% to 0 on the X-axis
+    duration: 1, // Animation duration
+    ease: "power3.out", // easing for smooth movement (explore the different easing to experiment)
+    scrollTrigger: {
+      trigger: textElement.current,
+      start: "top 80%", // starts when the top of the element hits the 80% viewport height
+      end: "bottom 60%", // ends when the bottom of the element exits the 60% viewport height
+      toggleActions: "play none none reverse", // Defines how the animation responds to scroll direction
+    },
+  });
+}, []);
+```
+<br><br>
+I suggest playing around with multiple text boxes and staggering the delay, changing the direction, etc. to make the most out of GSAP's library.
+<br><br>
+
+
+
+
+![Screenshot 2024-01-22 163021](https://github.com/Fadeleke57/faroukadeleke/assets/110058327/d2ee00d9-bb11-410f-b23f-012c2188e90f)
+
+
+
+
+
+
+
