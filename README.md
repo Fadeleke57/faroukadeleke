@@ -55,11 +55,11 @@ useGSAP(() => {
     duration: 1, // Animation duration
     ease: "power3.out", // easing for smooth movement (explore the different easing to experiment)
     scrollTrigger: {
-      trigger: textElement.current,
+      trigger: textElement.current, // animation is triggered by the text we referenced
       start: "top 80%", // starts when the top of the element hits the 80% viewport height
       end: "bottom 60%", // ends when the bottom of the element exits the 60% viewport height
-      toggleActions: "play none none reverse", // Defines how the animation responds to scroll direction
-    },
+      toggleActions: "play none none reverse", // play around with this
+    },                                        
   });
 }, []);
 ```
