@@ -20,6 +20,7 @@ import java from '../../../public/photos/icons/java.svg'
 import vercel from '../../../public/photos/icons/vercel.svg'
 import javascript from '../../../public/photos/icons/javascript.svg'
 import django from '../../../public/photos/icons/django.svg'
+import c from '../../../public/photos/icons/c.svg'
 
 
 function Skills() {
@@ -98,13 +99,14 @@ function Skills() {
                 <Image src={react} className={styles.galleryImg} alt="react"/>
                 <Image src={next} className={styles.galleryImg} alt="next"/>
                 <Image src={vercel} className={styles.galleryImg} alt="vercel"/>
+                <Image src={python} className={styles.galleryImg} alt="python"/>
+                <Image src={java} className={styles.galleryImg} alt="java"/>
+                <Image src={c} className={styles.galleryImg} alt="c++"/>
+                <Image src={django} className={styles.galleryImg} alt="django"/>
                 <Image src={html} className={styles.galleryImg} alt="html"/>
                 <Image src={css} className={styles.css} alt="css"/>
                 <Image src={javascript} className={styles.js} alt="js"/>
-                <Image src={java} className={styles.galleryImg} alt="java"/>
-                <Image src={python} className={styles.galleryImg} alt="python"/>
                 <Image src={unix} className={styles.galleryImg} alt="unix"/>
-                <Image src={django} className={styles.galleryImg} alt="django"/>
             </div>
         </section>
 
