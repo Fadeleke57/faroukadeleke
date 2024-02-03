@@ -11,7 +11,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import airplane from '../../../public/photos/airplane.jpg'
-import cr from '../../../public/photos/costaRica.jpg'
+import dc from '../../../public/photos/dark_computer.jpg'
 import pier57 from '../../../public/photos/pier57.jpg'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -112,7 +112,7 @@ function Bio() {
         </div>
 
         <div className={styles.column}>
-          <div className={styles.image}><Image src={cr} className={styles.projectsImg} alt='beach'/></div>
+          <div className={styles.image}><Image src={dc} className={styles.projectsImg} alt='beach'/></div>
           <div className={styles.image}><Image src={pier57} className={styles.projectsImg} alt='pier57'/></div>
         </div>
 
