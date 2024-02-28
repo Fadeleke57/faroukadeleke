@@ -187,11 +187,11 @@ function Landing() {
             <div className={styles.subtitleAnimation}>
               <div className={styles.animationWrapper}>
                 <div className={styles.maskPrefix}>
-                  <p ref={prefix2Ref} style={{transform: 'translateY(100%)'}}>Self-Made</p>
+                  <p ref={prefix2Ref} style={{transform: 'translateY(100%)'}}>Freelance</p>
                 </div>
 
                 <div className={styles.textMask}>
-                  <p ref={webDevRef} className={styles.textContent} >Self-Starter</p>
+                  <p ref={webDevRef} className={styles.textContent} >Web Development</p>
                 </div>
               </div>
             </div>
