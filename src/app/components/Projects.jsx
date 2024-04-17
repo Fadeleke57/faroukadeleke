@@ -12,6 +12,8 @@ import Image from 'next/image';
 import ct from '../../../public/photos/cattrail.png'
 import bf from '../../../public/photos/bonsai.png'
 import network from '../../../public/photos/network.jpg'
+import deepface from '../../../public/projectImage/deepface.png'
+import dfw from '../../../public/projectImage/dfw.png'
 
 //life saver
 import { useGSAP } from "@gsap/react";
@@ -157,9 +159,9 @@ import Modal from '../components/Modal'
     //features for each project
     const lstmFeatures = [ "Pytorch", "AlphaVantage","LSTM", "RNN", "REST API", "Django Rest Framework", "NumPy"];
 
-    const bfFeatures = [ "NextJS", "AlphaVantage","Sentiment Anlayis", "News", "Historical Analysis"];
+    const bfFeatures = [ "Python", "OpenCV","Camera View", "Threading"];
 
-    const ctFeatures = [ "NextJS", "Vercel","GSAP", "Project Management", "Agile", "EmailJS", "Figma"];
+    const ctFeatures = [ "Next.js", "Vercel","GSAP", "Project Management", "Agile", "Express.js", "Figma"];
 
   return (
     <div className={styles.projects}>
@@ -174,11 +176,66 @@ import Modal from '../components/Modal'
 
       </section>
 
-      {
-        /* LSTM Project */
-      }
 
       <section className={styles.services}>
+
+        {
+        /*deep face Project*/
+        }
+
+        <div className={styles.serviceAnim}>
+          <div className={styles.serviceHeaderBox}>
+
+            <div className={styles.infoBox}>
+            <Info 
+                  onClick={() => openModal({
+                    pName: 'Deep-Face',
+                    date: '03/24 - Ongoing',
+                    features: bfFeatures,
+                    repository: 'https://github.com/Fadeleke57/deep-face',
+                  })}
+              />
+            </div>
+            <Link href={'https://stock-tracking-app.vercel.app/'} target='blank'>
+              <div 
+                className={styles.projectHeader}
+                onMouseEnter={() => handleHover(1)} 
+                onMouseLeave={() => handleMouseLeave(1)}
+                >
+                <h2>
+                Face-Recognition Program
+                <FontAwesomeIcon 
+                icon={faArrowRight} 
+                ref={el => projectArrows.current[1] = el} 
+                className={styles.projectArrow}
+                />
+                </h2>
+              </div>
+            </Link>
+
+            <p className={styles.serviceText}>
+             Python program using deepFace (face recognition and facial attribute analysis framework) to verify camera view with reference photo.
+            </p>
+       
+          </div>
+          <div className={styles.imageBox}>
+            <Image src={deepface} className={styles.servicesImg} alt='deep face'/>
+            <div className={styles.infoBoxMobile}>
+              <Info 
+                  onClick={() => openModal({
+                    pName: 'Deep-Face',
+                    date: '03/24 - Ongoing',
+                    features: bfFeatures,
+                    repository: 'https://github.com/Fadeleke57/deep-face',
+                  })}
+              />
+            </div>
+          </div>
+        </div>
+
+        {
+          /* LSTM Project */
+        }
 
         <div className={styles.serviceAnim}>
           <div className={styles.serviceHeaderBox}>
@@ -232,61 +289,7 @@ import Modal from '../components/Modal'
 
         </div>
 
-      {
-        /*BONSAI FINANCE Project*/
-      }
 
-        <div className={styles.serviceAnim}>
-          <div className={styles.serviceHeaderBox}>
-
-            <div className={styles.infoBox}>
-            <Info 
-                  onClick={() => openModal({
-                    pName: 'Bonsai Finance',
-                    date: '06/23 - 08/23',
-                    features: bfFeatures,
-                    repository: 'https://github.com/Fadeleke57/stock-tracking-app',
-                    demo: 'https://stock-tracking-app.vercel.app/'
-                  })}
-              />
-            </div>
-            <Link href={'https://stock-tracking-app.vercel.app/'} target='blank'>
-              <div 
-                className={styles.projectHeader}
-                onMouseEnter={() => handleHover(1)} 
-                onMouseLeave={() => handleMouseLeave(1)}
-                >
-                <h2>
-                Bonsai Finance 
-                <FontAwesomeIcon 
-                icon={faArrowRight} 
-                ref={el => projectArrows.current[1] = el} 
-                className={styles.projectArrow}
-                />
-                </h2>
-              </div>
-            </Link>
-
-            <p className={styles.serviceText}>
-              Platform powered by the AlphaVantage API, offering real-time stock information and relavant news to users.
-            </p>
-       
-          </div>
-          <div className={styles.imageBox}>
-            <Image src={bf} className={styles.servicesImg} alt='bonsai finance'/>
-            <div className={styles.infoBoxMobile}>
-              <Info 
-                  onClick={() => openModal({
-                    pName: 'Bonsai Finance',
-                    date: '06/23 - 08/23',
-                    features: bfFeatures,
-                    repository: 'https://github.com/Fadeleke57/stock-tracking-app',
-                    demo: 'https://stock-tracking-app.vercel.app/'
-                  })}
-              />
-            </div>
-          </div>
-        </div>
 
       {
         /**CATTRAIL Project */
@@ -298,23 +301,23 @@ import Modal from '../components/Modal'
             <div className={styles.infoBox}>
             <Info 
                 onClick={() => openModal({
-                  pName: 'Cattrail Website',
-                  date: '10/23 - 12/23',
+                  pName: 'Dekker Foundation Website',
+                  date: '03/24 - 04/24',
                   features: ctFeatures,
                   repository: 'https://github.com/Fadeleke57/cattrail',
-                  demo: 'https://www.cattrail.com/'
+                  demo: 'https://dekker-8qc6.vercel.app/'
                 })}
               />
             </div>
 
-            <Link href={'https://www.cattrail.com/'} target='blank'>
+            <Link href={'https://dekker-8qc6.vercel.app/'} target='blank'>
               <div 
                 className={styles.projectHeader}
                 onMouseEnter={() => handleHover(2)} 
                 onMouseLeave={() => handleMouseLeave(2)}
                 >
                 <h2>
-                Investment Management Company Site
+                Private Foundation Website
                 <FontAwesomeIcon 
                   icon={faArrowRight} 
                   ref={el => projectArrows.current[2] = el}
@@ -325,21 +328,21 @@ import Modal from '../components/Modal'
             </Link>
 
             <p className={styles.serviceText}>
-              Website built with NextJs for Cat Trail Capital LLC, an investment management company. Deployed on Vercel.
+              Website built with NextJs for the Dekker Foundation, a private foundation endowed by the Dekker family. Deployed on Vercel.
             </p>
 
           </div>
 
           <div className={styles.imageBox}>
-            <Image src={ct} className={styles.servicesImg} alt='Cat Trail'/>
+            <Image src={dfw} className={styles.servicesImg} alt='Dekker Foundation'/>
             <div className={styles.infoBoxMobile} >
               <Info 
                 onClick={() => openModal({
-                  pName: 'Cattrail Website',
-                  date: '10/23 - 12/23',
+                  pName: 'Dekker Foundation Website',
+                  date: '03/24 - 04/24',
                   features: ctFeatures,
-                  repository: 'https://github.com/Fadeleke57/cattrail',
-                  demo: 'https://www.cattrail.com/'
+                  repository: 'https://github.com/Fadeleke57/dekker',
+                  demo: 'https://dekker-8qc6.vercel.app/'
                 })}
               />
             </div>
