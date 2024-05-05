@@ -196,7 +196,7 @@ import Modal from '../components/Modal'
                   })}
               />
             </div>
-            <Link href={'https://stock-tracking-app.vercel.app/'} target='blank'>
+            <Link href={'https://github.com/Fadeleke57/deep-face'} target='blank'>
               <div 
                 className={styles.projectHeader}
                 onMouseEnter={() => handleHover(1)} 
