@@ -79,9 +79,7 @@
 }
 
 @media screen and (max-width: 1100px) {
-    .galleryWrapper {
 
-    }
     .gallery {
         justify-content: center;
         flex-wrap: wrap;

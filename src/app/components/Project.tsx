@@ -26,8 +26,8 @@ function Project({codeLink, demoLink, skills, title, description, image} : Proje
                 <p>{description}</p>
             </div>
             <div className={styles.tags}>
-                {skills.map(skill => (
-                    <p>{skill}</p>
+                {skills.map((skill, id) => (
+                    <p key={id}>{skill}</p>
                 ))}
             </div>
         </div> 
