@@ -37,6 +37,7 @@
   box-shadow: 0 0 5em rgba(0, 0, 0, .4);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background-color: #fff;
+  border-radius: 1em;
 }
 
 .service {
@@ -146,6 +147,28 @@
   right: 1em;
   display: none;
 }
+
+.content_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+  max-width: 1100px;
+  margin: 2em auto 0em auto;
+  padding: 2em 2em 0 2em;
+}
+
+@media screen and (max-width: 900px) {
+  .content_wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .content_wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 @media screen and (max-width: 600px) {
   .subTitle, .footer p {

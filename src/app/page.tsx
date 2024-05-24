@@ -24,7 +24,7 @@ export default function Home() {
 
     requestAnimationFrame(raf);
   }, []);
-
+  const list = [1,2]
   return (
     <main>
       <Landing/>

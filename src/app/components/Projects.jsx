@@ -1,5 +1,5 @@
 'use client'
-import { useRef, useState } from 'react';
+import React,{ useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
@@ -9,18 +9,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import Image from 'next/image';
-import ct from '../../../public/photos/cattrail.png'
-import bf from '../../../public/photos/bonsai.png'
 import network from '../../../public/photos/network.jpg'
 import deepface from '../../../public/projectImage/deepface.png'
-import dfw from '../../../public/projectImage/dfw.png'
+import dfw from '../../../public/projectImage/dekker.png'
 
-//life saver
 import { useGSAP } from "@gsap/react";
-import Link from 'next/link'
+import Link from 'next/link';
 
-import Info from '../components/ProjectDetails'
-import Modal from '../components/Modal'
+import Info from './ProjectDetails';
+import Modal from './Modal';
+import Project from './Project';
+import projects from '../../../public/projects.json'
 
   function Projects() {
     gsap.registerPlugin(ScrollTrigger) 
@@ -167,22 +166,17 @@ import Modal from '../components/Modal'
     <div className={styles.projects}>
       
       {/**GSAP animation header */}
-      <section ref={heroSection} className={styles.hero}>
 
+      <section ref={heroSection} className={styles.hero}>
         <div ref={title}><h1 className={styles.title}><span className={styles.gradient}>Latest</span> Projects</h1></div>
         <p ref={subtitle} className={styles.subTitle}>
           I strive to put one-hundred percent effort into every project that I delve into, focusing on honing my skills over subpar work. Below are some of the projects I have completed outside of the classroom.. 
         </p>
-
       </section>
 
+      {/*deep face Project*/}
 
-      <section className={styles.services}>
-
-        {
-        /*deep face Project*/
-        }
-
+      <section className={styles.services}>   
         <div className={styles.serviceAnim}>
           <div className={styles.serviceHeaderBox}>
 
@@ -233,9 +227,7 @@ import Modal from '../components/Modal'
           </div>
         </div>
 
-        {
-          /* LSTM Project */
-        }
+        {/* LSTM Project */}
 
         <div className={styles.serviceAnim}>
           <div className={styles.serviceHeaderBox}>
@@ -289,11 +281,7 @@ import Modal from '../components/Modal'
 
         </div>
 
-
-
-      {
-        /**CATTRAIL Project */
-      }
+      {/**CATTRAIL Project */}
 
         <div className={styles.service}>
           <div className={styles.serviceHeaderBox}>
@@ -352,10 +340,9 @@ import Modal from '../components/Modal'
 
       </section>
 
-      {
-        /**BOTTOM TEXT */
-      }
-      <footer ref={footer} className={styles.footer}>
+      {/**BOTTOM TEXT */}
+
+      <div ref={footer} className={styles.footer}>
         <div ref={endBox}> 
           <div className={styles.textMask}>
             <div ref={textContent} className={styles.textContent}>
@@ -379,7 +366,21 @@ import Modal from '../components/Modal'
             </div>
           </div>
         </div>
-      </footer>
+      </div>
+
+      <div className={styles.content_wrapper}>
+        {projects.map((project, id) => (
+          <Project
+            codeLink={project.codeLink}
+            demoLink={project.demoLink}
+            title={project.title}
+            description={project.description}
+            image={project.image}
+            skills={project.skills}
+            key={id}
+          />
+        ))}
+      </div>
 
       <Modal
         show={modalContent.show}
@@ -390,7 +391,6 @@ import Modal from '../components/Modal'
         repository={modalContent.repository}
         demo={modalContent.demo}
       />
-
 
     </div>
   )

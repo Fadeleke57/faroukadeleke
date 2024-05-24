@@ -1,15 +1,11 @@
 'use client'
+
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useRef } from 'react';
-
+import React, { useRef } from 'react';
 import styles from '../styles/Skills.module.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import Image from 'next/image'
-import test from '../../../public/background.jpg'
-
 import react from '../../../public/photos/icons/react.svg'
 import next from '../../../public/photos/icons/next.svg'
 import html from '../../../public/photos/icons/html.svg'
@@ -24,26 +20,21 @@ import c from '../../../public/photos/icons/c.svg'
 
 
 function Skills() {
-
+    gsap.registerPlugin(ScrollTrigger);
     const my = useRef(null);
     const skills = useRef(null);
     const skillsSection = useRef(null);
-
     const gallery = useRef(null);
     const galleryWrapper = useRef(null);
-
-    gsap.registerPlugin(ScrollTrigger);
+    const skillIcons = [react, next, vercel, python, java, c, django, html, css, javascript, unix]
    
     useGSAP(() => {
-        // only do animation on non-mobile screens
-        if (gallery.current && galleryWrapper.current && window.innerWidth > 800) {
-            // Calculate total gallery width
-            let galleryWidth = gallery.current.offsetWidth;
-            // Calculate amount to scroll horizontally
-            let amountToScroll = galleryWidth - window.innerWidth;
+        if (gallery.current && galleryWrapper.current && (window.innerWidth > 1100)) { // only do animation on non-mobile screens
+            console.log(window.innerWidth)
+            let galleryWidth = gallery.current.offsetWidth; // calculate total gallery width
+            let amountToScroll = galleryWidth - window.innerWidth; // calculate amount to scroll horizontally
     
-            // Set the animation for the gallery
-            gsap.to(gallery.current, {
+            gsap.to(gallery.current, {  // set the animation for the gallery
                 x: -amountToScroll,
                 ease: "none",
                 scrollTrigger: {
@@ -54,8 +45,6 @@ function Skills() {
                     scrub: true,
                 }
             });
-        
-
             gsap.from(my.current, {
                 x: -10 + 'vw',
                 ease: 'power1.in',
@@ -66,7 +55,6 @@ function Skills() {
                     scrub: true,
                 }
             });
-
             gsap.from(skills.current, {
                 x: 10 + 'vw',
                 ease: "none",
@@ -82,7 +70,6 @@ function Skills() {
 
   return (
     <div className={styles.skills} ref={skillsSection}>
-
         <section className={styles.hero}>
             <div className={styles.skillsHeader}>
             <h1 ref={my} className={styles.gradient}>My</h1>
@@ -91,25 +78,14 @@ function Skills() {
                    I believe anything can be learned through the internet, with projects to supplement gained knowledge. Below are some of the technical skills that I am currently well-versed in..
                 </p>           
             </div>
-
         </section>
-
         <section ref={galleryWrapper} className={styles.galleryWrapper}>
             <div ref={gallery} className={styles.gallery} >
-                <Image src={react} className={styles.galleryImg} alt="react"/>
-                <Image src={next} className={styles.galleryImg} alt="next"/>
-                <Image src={vercel} className={styles.galleryImg} alt="vercel"/>
-                <Image src={python} className={styles.galleryImg} alt="python"/>
-                <Image src={java} className={styles.galleryImg} alt="java"/>
-                <Image src={c} className={styles.galleryImg} alt="c++"/>
-                <Image src={django} className={styles.galleryImg} alt="django"/>
-                <Image src={html} className={styles.galleryImg} alt="html"/>
-                <Image src={css} className={styles.css} alt="css"/>
-                <Image src={javascript} className={styles.js} alt="js"/>
-                <Image src={unix} className={styles.galleryImg} alt="unix"/>
+                {skillIcons.map((icon, id) => (
+                    <Image src={icon} className={styles.galleryImg} alt={icon} key={id}/>
+                ))}
             </div>
         </section>
-
     </div>
   )
 }

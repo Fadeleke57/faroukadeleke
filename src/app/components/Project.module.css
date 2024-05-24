@@ -1,0 +1,119 @@
+.project {
+    height: 675px;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 1em;
+    box-shadow: 0 0 5em rgba(0, 0, 0, .2);
+    transition: transform 0.3s ease;
+    font-family: "Hanken Grotesk", sans-serif;
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    padding: 2em;
+    overflow: hidden;
+    margin: 0 auto;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+  }
+
+  .imageBox {
+    position: relative;
+    padding: 3em 6em 4em 6em;
+  }
+  
+  
+.project_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 0 2em rgba(0, 0, 0, .4);
+  }
+
+.project:hover {
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px #2e1edd;
+}
+
+.intro {
+    padding: 0 2em;
+}
+
+.project h3 {
+    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+}
+
+.project p {
+    letter-spacing: .02em;
+    color: #252525;
+}
+
+.tags {
+    padding: 0 2em;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    position: absolute;
+    bottom: 1em;
+}
+
+.tags p {
+    padding: .5em;
+    border-radius: 1em;
+    border: 2px solid purple;
+}
+
+.tags p:hover {
+    color: white;
+    background-color: purple;
+}
+
+@media screen and (max-width: 1100px) {
+    .image {
+        height: 250px;
+      }
+      .project {
+        height: 600px;
+      }
+}
+
+@media screen and (max-width: 900px) {
+    .image {
+        height: 300px;
+      }
+}
+
+@media screen and (max-width: 800px) {
+    .image {
+        height: 400px;
+      }
+}
+
+@media screen and (max-width: 600px) {
+    .image {
+        height: 220px;
+    }
+    .project {
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .image {
+        height: 200px;
+    }
+    .project {
+        height: 470px;
+    }
+}

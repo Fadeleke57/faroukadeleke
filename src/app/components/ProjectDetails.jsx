@@ -5,7 +5,6 @@ import { useGSAP } from '@gsap/react'
 import '../styles/ProjectDetails.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
-import Link from 'next/link'
 import dynamic from 'next/dynamic';
 
 
