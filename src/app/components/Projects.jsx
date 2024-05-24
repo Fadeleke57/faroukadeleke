@@ -5,8 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 
 import styles from '../styles/Projects.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import Arrow from './Arrow';
 
 import Image from 'next/image';
 import network from '../../../public/photos/network.jpg'
@@ -15,6 +14,8 @@ import dfw from '../../../public/projectImage/dekker.png'
 
 import { useGSAP } from "@gsap/react";
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import Info from './ProjectDetails';
 import Modal from './Modal';
@@ -182,30 +183,15 @@ import projects from '../../../public/projects.json'
 
             <div className={styles.infoBox}>
             <Info 
-                  onClick={() => openModal({
-                    pName: 'Deep-Face',
-                    date: '03/24 - Ongoing',
-                    features: bfFeatures,
-                    repository: 'https://github.com/Fadeleke57/deep-face',
-                  })}
+              onClick={() => openModal({
+                pName: 'Deep-Face',
+                date: '03/24 - Ongoing',
+                features: bfFeatures,
+                repository: 'https://github.com/Fadeleke57/deep-face',
+              })}
               />
             </div>
-            <Link href={'https://github.com/Fadeleke57/deep-face'} target='blank'>
-              <div 
-                className={styles.projectHeader}
-                onMouseEnter={() => handleHover(1)} 
-                onMouseLeave={() => handleMouseLeave(1)}
-                >
-                <h2>
-                Face-Recognition Program
-                <FontAwesomeIcon 
-                icon={faArrowRight} 
-                ref={el => projectArrows.current[1] = el} 
-                className={styles.projectArrow}
-                />
-                </h2>
-              </div>
-            </Link>
+            <Arrow link='https://github.com/Fadeleke57/deep-face'>Face-Recognition Program</Arrow>
 
             <p className={styles.serviceText}>
              Python program using deepFace (face recognition and facial attribute analysis framework) to verify camera view with reference photo.
@@ -242,22 +228,7 @@ import projects from '../../../public/projects.json'
                 })}
               />
             </div>
-
-            <Link href={'https://github.com/Fadeleke57/bonsai-finance-app'} target='blank'>
-              <div 
-                className={styles.projectHeader}
-                onMouseEnter={() => handleHover(0)} 
-                onMouseLeave={() => handleMouseLeave(0)}
-              >
-                <h2>
-                REST API For Predicting Next-Day Stock Price <FontAwesomeIcon 
-                  icon={faArrowRight} 
-                  ref={el => projectArrows.current[0] = el}
-                  className={styles.projectArrow}
-                />
-                </h2>
-              </div>
-            </Link>
+            <Arrow link='https://github.com/Fadeleke57/bonsai-finance-app'>REST API For Predicting Next-Day Stock Price</Arrow>
 
             <p className={styles.serviceText}>
               Specialized stock price prediction tool using PyTorch and NumPy, focusing on LSTM neural networks to analyze and predict stock market trends.
@@ -297,23 +268,7 @@ import projects from '../../../public/projects.json'
                 })}
               />
             </div>
-
-            <Link href={'https://dekker-8qc6.vercel.app/'} target='blank'>
-              <div 
-                className={styles.projectHeader}
-                onMouseEnter={() => handleHover(2)} 
-                onMouseLeave={() => handleMouseLeave(2)}
-                >
-                <h2>
-                Private Foundation Website
-                <FontAwesomeIcon 
-                  icon={faArrowRight} 
-                  ref={el => projectArrows.current[2] = el}
-                  className={styles.projectArrow}
-                />
-                </h2>
-              </div>
-            </Link>
+            <Arrow link='https://dekker-8qc6.vercel.app/'>Private Foundation Website</Arrow>
 
             <p className={styles.serviceText}>
               Website built with NextJs for the Dekker Foundation, a private foundation endowed by the Dekker family. Deployed on Vercel.
@@ -347,22 +302,7 @@ import projects from '../../../public/projects.json'
           <div className={styles.textMask}>
             <div ref={textContent} className={styles.textContent}>
               <h2>{"There's More!"}</h2>
-              <p>To learn more about a particular project or to view my full array of repositories, visit my github at 
-              <Link 
-                href={'https://github.com/Fadeleke57?tab=repo'} 
-                target='blank'
-                onMouseEnter={() => handleHover(3)} 
-                onMouseLeave={() => handleMouseLeave(3)}
-                style={{marginLeft: 6 + 'px'}}
-              >
-                https://github.com/Fadeleke57 
-                <FontAwesomeIcon 
-                  icon={faArrowRight} 
-                  ref={el => projectArrows.current[3] = el}
-                  className={styles.projectArrow}
-                />
-              </Link>
-              </p>
+              <Arrow link='https://github.com/Fadeleke57?tab=repo'>To learn more about a particular project or to view my full array of repositories, visit my github</Arrow>
             </div>
           </div>
         </div>

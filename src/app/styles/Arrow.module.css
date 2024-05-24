@@ -1,0 +1,17 @@
+.btn_inverted {
+    display: inline-block;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #2e1edd;
+    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.arrow {
+    margin-left: 7px;
+}
