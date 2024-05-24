@@ -6,17 +6,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import React, { useRef } from 'react';
 import styles from '../styles/Skills.module.css'
 import Image from 'next/image'
-import react from '../../../public/photos/icons/react.svg'
+import react from '../../../public/photos/react.png'
 import next from '../../../public/photos/icons/next.svg'
-import html from '../../../public/photos/icons/html.svg'
-import css from '../../../public/photos/icons/css.svg'
-import unix from '../../../public/photos/icons/unix.svg'
+import html from '../../../public/photos/html.png'
+import css from '../../../public/photos/css.png'
+import unix from '../../../public/photos/linux.png'
 import python from '../../../public/photos/icons/python.svg'
-import java from '../../../public/photos/icons/java.svg'
-import vercel from '../../../public/photos/icons/vercel.svg'
-import javascript from '../../../public/photos/icons/javascript.svg'
+import java from '../../../public/photos/java.png'
+import javascript from '../../../public/photos/js.png'
 import django from '../../../public/photos/icons/django.svg'
 import c from '../../../public/photos/icons/c.svg'
+import types from '../../../public/photos/typescript.png'
 
 
 function Skills() {
@@ -26,7 +26,7 @@ function Skills() {
     const skillsSection = useRef(null);
     const gallery = useRef(null);
     const galleryWrapper = useRef(null);
-    const skillIcons = [react, next, vercel, python, java, c, django, html, css, javascript, unix]
+    const skillIcons = [react, next, python, java, c, django, html, css, javascript, unix, types]
    
     useGSAP(() => {
         if (gallery.current && galleryWrapper.current && (window.innerWidth > 1100)) { // only do animation on non-mobile screens

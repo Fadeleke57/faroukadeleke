@@ -8,7 +8,7 @@
     border-radius: 1em;
     box-shadow: 0 0 5em rgba(0, 0, 0, .2);
     transition: transform 0.3s ease;
-    font-family: "Hanken Grotesk", sans-serif;
+
     position: relative;
 }
 

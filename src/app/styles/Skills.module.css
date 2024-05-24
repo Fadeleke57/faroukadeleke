@@ -48,8 +48,9 @@
 
 .galleryImg{
     width: 20vw;
-    height: 46vh;
+    height: 35vh;
     padding: 0 2em;
+    border-radius: 1em;
 }
 
 .about {
@@ -66,45 +67,28 @@
     text-align: center;
 }
 
-.css {
-    width: 15.5vw;
-    height: 46vh;
-    padding: 0 2em;
-}
-
-.js {
-    width: 24.1vw;
-    height: 46vh;
-    padding: 0 2em;
-}
-
 @media screen and (max-width: 1100px) {
 
     .gallery {
         justify-content: center;
         flex-wrap: wrap;
         gap: 1.3em;
-        padding: 2em 2em;
+        padding: 2em 1.2em;
     }
     .galleryImg {
         padding: 0;
         height: 10vh;
 
     }
-    .css {
-        padding: 0;
-        height: fit-content;
-    }
-    .js {
-        width: 7em;
-        padding: 0;
-        height: fit-content;
-    }
     .hero {
         height: fit-content;
     }
     .hero h1 {
         font-size: 6em;
+        text-align: center;
+    }
+    .hero p {
+        text-align: center;
     }
     .skillsHeader {
         text-align: left;

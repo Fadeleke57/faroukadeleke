@@ -56,12 +56,10 @@ function Footer() {
 
         <div className={styles.formHeader}>
       
-          <h2><span className={styles.gradient}>Get In</span> Touch</h2>
+          <h1><span className={styles.gradient}>Get In</span> Touch</h1>
           <br></br>
           <h3>Have a question? Inquiry? Send a message here.</h3>
           <br></br><br></br>
-          <small className={styles.small}>fadeleke57@gmail.com</small><br></br>
-          <small className={styles.small}>(732) 666-8394</small>
 
         </div>
 

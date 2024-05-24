@@ -4,16 +4,15 @@
 }
 
 .footer h1 {
-    color: #fff;
-    font-size: 3em;
-    font-size: clamp(4em, 7vw, 8em);
-}
-  
-.footer h2 {
-    font-size: 3em;
-    font-size: clamp(6em, 4vw, 5em);
+    letter-spacing: .01em;
+    font-size: clamp(3em, 6vw, 6em);
+    font-weight: 400;
+    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}   
+}  
 
 .footer h3 {
     font-size: 1.7em;
@@ -39,17 +38,9 @@
     text-align: left;
 }
 
-
 .small {
     font-size: 1em;
 }
-
-/*.gradient {
-    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}*/
 
 .formHeader p {
     font-size: 1.4em;
@@ -143,7 +134,15 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        gap: 2em;
+        gap: 1em;
+    }
+
+    .formContainer h1, .formContainer h3, .formContainer small {
+        text-align: center;
+    }
+
+    .small {
+        text-align: center;
     }
 
     .socialMedia {
@@ -156,9 +155,9 @@
     .footer {
         padding: 5em 0 1em 0;
     }
-    .footer h2 {
+    .footer h1 {
         font-size: 5.7em;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         letter-spacing: 0.02em;
+        font-weight: 400;
     }
 }
