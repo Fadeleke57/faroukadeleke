@@ -1,9 +1,8 @@
 'use client'
-
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styles from '../styles/Skills.module.css'
 import Image from 'next/image'
 import react from '../../../public/photos/react.png'
@@ -18,7 +17,6 @@ import django from '../../../public/photos/icons/django.svg'
 import c from '../../../public/photos/icons/c.svg'
 import types from '../../../public/photos/typescript.png'
 
-
 function Skills() {
     gsap.registerPlugin(ScrollTrigger);
     const my = useRef(null);
@@ -26,10 +24,11 @@ function Skills() {
     const skillsSection = useRef(null);
     const gallery = useRef(null);
     const galleryWrapper = useRef(null);
+    const progressBar = useRef(null);
     const skillIcons = [react, next, python, java, c, django, html, css, javascript, unix, types]
-   
+
     useGSAP(() => {
-        if (gallery.current && galleryWrapper.current && (window.innerWidth > 1100)) { // only do animation on non-mobile screens
+        if (gallery.current && galleryWrapper.current && window.innerWidth > 1100) { // only do animation on non-mobile screens
             console.log(window.innerWidth)
             let galleryWidth = gallery.current.offsetWidth; // calculate total gallery width
             let amountToScroll = galleryWidth - window.innerWidth; // calculate amount to scroll horizontally
@@ -43,6 +42,10 @@ function Skills() {
                     end: "+=" + amountToScroll,
                     pin: true,
                     scrub: true,
+                    onUpdate: self => {
+                        const progress = self.progress.toFixed(3) * 100;
+                        progressBar.current.style.width = `${progress}%`;
+                    }
                 }
             });
             gsap.from(my.current, {
@@ -66,28 +69,31 @@ function Skills() {
                 }
             });
         }
-    }); 
+    });
 
-  return (
-    <div className={styles.skills} ref={skillsSection}>
-        <section className={styles.hero}>
-            <div className={styles.skillsHeader}>
-            <h1 ref={my} className={styles.gradient}>My</h1>
-            <h1 ref={skills}>Skills</h1>
-                <p>
-                   I believe anything can be learned through the internet, with projects to supplement gained knowledge. Below are some of the technical skills that I am currently well-versed in..
-                </p>           
-            </div>
-        </section>
-        <section ref={galleryWrapper} className={styles.galleryWrapper}>
-            <div ref={gallery} className={styles.gallery} >
-                {skillIcons.map((icon, id) => (
-                    <Image src={icon} className={styles.galleryImg} alt={icon} key={id}/>
-                ))}
-            </div>
-        </section>
-    </div>
-  )
+    return (
+        <div className={styles.skills} ref={skillsSection}>
+            <section className={styles.hero}>
+                <div className={styles.skillsHeader}>
+                    <h1 ref={my} className={styles.gradient}>My</h1>
+                    <h1 ref={skills}>Skills</h1>
+                    <p>
+                        I believe anything can be learned through the internet, with projects to supplement gained knowledge. Below are some of the technical skills that I am currently well-versed in..
+                    </p>
+                </div>
+            </section>
+            <section ref={galleryWrapper} className={styles.galleryWrapper}>
+                <div ref={gallery} className={styles.gallery}>
+                    {skillIcons.map((icon, id) => (
+                        <Image src={icon} className={styles.galleryImg} alt={icon} key={id}/>
+                    ))}
+                </div>
+                <div className={styles.progressContainer}>
+                    <div ref={progressBar} className={styles.progressBar}></div>
+                </div>
+            </section>
+        </div>
+    )
 }
 
-export default Skills
+export default Skills;
