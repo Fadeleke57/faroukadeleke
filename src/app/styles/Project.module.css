@@ -8,7 +8,6 @@
     border-radius: 1em;
     box-shadow: 0 0 5em rgba(0, 0, 0, .2);
     transition: transform 0.3s ease;
-
     position: relative;
 }
 
@@ -19,12 +18,12 @@
     margin: 0 auto;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
-  }
+}
 
-  .imageBox {
+.imageBox {
     position: relative;
     padding: 3em 6em 4em 6em;
-  }
+}
   
   
 .project_img {
@@ -77,6 +76,13 @@
 .tags p:hover {
     color: white;
     background-color: purple;
+}
+
+.gradient {
+    background: -webkit-linear-gradient(#2e1edd, #1e1e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 @media screen and (max-width: 1100px) {

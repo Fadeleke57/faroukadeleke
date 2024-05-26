@@ -1,59 +1,42 @@
 'use client'
-import React,{ useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from "@gsap/react";
 import SplitType from 'split-type';
 
-import styles from '../styles/Projects.module.css';
 import Arrow from './Arrow';
+import styles from '../styles/Projects.module.css';
 
-import Image from 'next/image';
-import network from '../../../public/photos/network.jpg'
-import deepface from '../../../public/projectImage/deepface.png'
-import dfw from '../../../public/projectImage/dekker.png'
-
-import { useGSAP } from "@gsap/react";
-import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-
-import Info from './ProjectDetails';
 import Modal from './Modal';
 import Project from './Project';
 import projects from '../../../public/projects.json'
+import FeaturedProject from './FeaturedProject';
+import fp from '../../../public/featuredProjects.json'; //list of featured projects in json
 
   function Projects() {
     gsap.registerPlugin(ScrollTrigger) 
-  
     const heroSection = useRef(null) //ref for title and subtitle box
     const title = useRef(null) //header ref
     const subtitle = useRef(null) //subtitle ref
-
     const footer = useRef(null) //footer box ref
     const endBox = useRef(null) //footer 
-
     const textContent = useRef(null) //footer text to be translated up
-
-    const projectArrows = useRef([]) //all the arrows in Projects.jsx
 
     const [modalContent, setModalContent] = useState({
       show: false,
       pName: '',
       date: '',
-      features: [],
+      features: [''],
       repository: '',
       demo: ''
     });
-
     const openModal = (projectDetails) => {
       setModalContent({ ...projectDetails, show: true });
     };
-    
     const closeModal = () => {
       setModalContent(prevState => ({ ...prevState, show: false }));
     };
-
-   
     useGSAP(() => {
       if (window.innerWidth > 850) {
         // splits the title text into individual characters
@@ -121,188 +104,50 @@ import projects from '../../../public/projects.json'
 
     });
 
-    //link arrow animation
-    const handleHover = (index) => {
-      gsap.to(projectArrows.current[index], {
-        x: 30,
-        duration: 0.2
-    })
-    };
-    
-    //resets when cursor leaves link
-    const handleMouseLeave = (index) => {
-      gsap.to(projectArrows.current[index], {
-        x: 0,
-        duration: 0.2
-      });
-    };
-
-    //modal animations
-    const modalRef = useRef(null);
-
-    const handleClose = () => {
-      gsap.to(modalRef.current, {
-          scaleY: 0,
-          duration: 1,
-          ease: 'power2.in'
-      });
-    };
-  
-    const handleOpen = () => {
-      gsap.to(modalRef.current, {
-          scaleY: 1,
-          duration: 1,
-          ease: 'power2.in'
-      });
-    }; 
-
-    //features for each project
-    const lstmFeatures = [ "Pytorch", "AlphaVantage","LSTM", "RNN", "REST API", "Django Rest Framework", "NumPy"];
-
-    const bfFeatures = [ "Python", "OpenCV","Camera View", "Threading"];
-
-    const ctFeatures = [ "Next.js", "Vercel","GSAP", "Project Management", "Agile", "Express.js", "Figma"];
-
   return (
     <div className={styles.projects}>
       
-      {/**GSAP animation header */}
-
-      <section ref={heroSection} className={styles.hero}>
+      <section ref={heroSection} className={styles.hero}> {/**GSAP animation header */}
         <div ref={title}><h1 className={styles.title}><span className={styles.gradient}>Latest</span> Projects</h1></div>
         <p ref={subtitle} className={styles.subTitle}>
           I strive to put one-hundred percent effort into every project that I delve into, focusing on honing my skills over subpar work. Below are some of the projects I have completed outside of the classroom.. 
         </p>
       </section>
 
-      {/*deep face Project*/}
-
       <section className={styles.services}>   
-        <div className={styles.serviceAnim}>
-          <div className={styles.serviceHeaderBox}>
-
-            <div className={styles.infoBox}>
-            <Info 
-              onClick={() => openModal({
-                pName: 'Deep-Face',
-                date: '03/24 - Ongoing',
-                features: bfFeatures,
-                repository: 'https://github.com/Fadeleke57/deep-face',
-              })}
-              />
-            </div>
-            <Arrow link='https://github.com/Fadeleke57/deep-face'>Face-Recognition Program</Arrow>
-
-            <p className={styles.serviceText}>
-             Python program using deepFace (face recognition and facial attribute analysis framework) to verify camera view with reference photo.
-            </p>
-       
+        {fp.map((project, id) => (
+          <div key={id}>
+          <FeaturedProject 
+            title={project.title}
+            repo={project.repo}
+            demo={project.demo}
+            date={project.date}
+            projectFeatures={project.projectFeatures}
+            imageSrc={project.imageSrc}
+            description={project.children}
+            animated={id < 2 ? true : false}
+            onInfoClick={() => openModal(
+              {show: true, 
+              pName: project.title, 
+              date : project.date, 
+              features : 
+              project.projectFeatures, 
+              repository : project.repo, 
+              demo : project.demo
+            })}
+          />
           </div>
-          <div className={styles.imageBox}>
-            <Image src={deepface} className={styles.servicesImg} alt='deep face'/>
-            <div className={styles.infoBoxMobile}>
-              <Info 
-                  onClick={() => openModal({
-                    pName: 'Deep-Face',
-                    date: '03/24 - Ongoing',
-                    features: bfFeatures,
-                    repository: 'https://github.com/Fadeleke57/deep-face',
-                  })}
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* LSTM Project */}
-
-        <div className={styles.serviceAnim}>
-          <div className={styles.serviceHeaderBox}>
-
-            <div className={styles.infoBox}>
-            <Info 
-                onClick={() => openModal({
-                  pName: 'LSTM API',
-                  date: '08/23 - Ongoing',
-                  features: lstmFeatures,
-                  repository: 'https://github.com/Fadeleke57/bonsai-finance-app'
-                })}
-              />
-            </div>
-            <Arrow link='https://github.com/Fadeleke57/bonsai-finance-app'>REST API For Predicting Next-Day Stock Price</Arrow>
-
-            <p className={styles.serviceText}>
-              Specialized stock price prediction tool using PyTorch and NumPy, focusing on LSTM neural networks to analyze and predict stock market trends.
-            </p>
-
-          </div>
-
-          <div className={styles.imageBox}>
-            <Image src={network} className={styles.servicesImg} alt='neural network'/>
-              <div className={styles.infoBoxMobile}>
-              <Info 
-                onClick={() => openModal({
-                  pName: 'LSTM API',
-                  date: '08/23 - Ongoing',
-                  features: lstmFeatures,
-                  repository: 'https://github.com/Fadeleke57/bonsai-finance-app'
-                })}
-              />
-            </div>
-          </div>
-
-        </div>
-
-      {/**CATTRAIL Project */}
-
-        <div className={styles.service}>
-          <div className={styles.serviceHeaderBox}>
-
-            <div className={styles.infoBox}>
-            <Info 
-                onClick={() => openModal({
-                  pName: 'Dekker Foundation Website',
-                  date: '03/24 - 04/24',
-                  features: ctFeatures,
-                  repository: 'https://github.com/Fadeleke57/cattrail',
-                  demo: 'https://dekker-8qc6.vercel.app/'
-                })}
-              />
-            </div>
-            <Arrow link='https://dekker-8qc6.vercel.app/'>Private Foundation Website</Arrow>
-
-            <p className={styles.serviceText}>
-              Website built with NextJs for the Dekker Foundation, a private foundation endowed by the Dekker family. Deployed on Vercel.
-            </p>
-
-          </div>
-
-          <div className={styles.imageBox}>
-            <Image src={dfw} className={styles.servicesImg} alt='Dekker Foundation'/>
-            <div className={styles.infoBoxMobile} >
-              <Info 
-                onClick={() => openModal({
-                  pName: 'Dekker Foundation Website',
-                  date: '03/24 - 04/24',
-                  features: ctFeatures,
-                  repository: 'https://github.com/Fadeleke57/dekker',
-                  demo: 'https://dekker-8qc6.vercel.app/'
-                })}
-              />
-            </div>
-          </div>
-
-        </div>
-
+        ))}
       </section>
-
-      {/**BOTTOM TEXT */}
 
       <div ref={footer} className={styles.footer}>
         <div ref={endBox}> 
-          <div className={styles.textMask}>
+          <div className={styles.textMask}> {/* for gsap*/}
             <div ref={textContent} className={styles.textContent}>
               <h2>{"There's More!"}</h2>
-              <Arrow link='https://github.com/Fadeleke57?tab=repo'>To learn more about a particular project or to view my full array of repositories, visit my github</Arrow>
+              <Arrow link='https://github.com/Fadeleke57?tab=repo' tag='h2'>
+                To learn more about a particular project or to view my full array of repositories, visit my github
+              </Arrow>
             </div>
           </div>
         </div>
@@ -310,6 +155,7 @@ import projects from '../../../public/projects.json'
 
       <div className={styles.content_wrapper}>
         {projects.map((project, id) => (
+          <div key={id}>
           <Project
             codeLink={project.codeLink}
             demoLink={project.demoLink}
@@ -317,8 +163,8 @@ import projects from '../../../public/projects.json'
             description={project.description}
             image={project.image}
             skills={project.skills}
-            key={id}
           />
+          </div>
         ))}
       </div>
 

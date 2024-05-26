@@ -7,10 +7,11 @@ import styles from '../styles/Projects.module.css'
 
 type ArrowProps = {
   children: ReactNode | null,
-  link: string
+  link: string,
+  tag: string,
 }
 
-function Arrow({children, link} : ArrowProps) {
+function Arrow({children, link, tag} : ArrowProps) {
 
     const arrow = useRef(null);//link arrow ref
 
@@ -37,15 +38,27 @@ function Arrow({children, link} : ArrowProps) {
       className={styles.projectHeader}
       onMouseEnter={() => handleHover()} 
       onMouseLeave={() => handleMouseLeave()}
-      >
-      <h2>
-      {children}
-      <FontAwesomeIcon 
-      icon={faArrowRight} 
-      ref={arrow} 
-      className={styles.projectArrow}
-      />
-      </h2>
+    >
+      { tag === "h2" ? 
+        <h2>
+        {children}
+        <FontAwesomeIcon 
+        icon={faArrowRight} 
+        ref={arrow} 
+        className={styles.projectArrow}
+        />
+        </h2> :
+
+        <p style={{color: 'white'}} className={styles.gradient}>
+        {children}
+        <FontAwesomeIcon 
+        icon={faArrowRight} 
+        ref={arrow} 
+        className={styles.projectArrow}
+        style={{color : 'white'}}
+        />
+        </p>
+      } 
     </div>
   </Link>
   )

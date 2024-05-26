@@ -1,0 +1,29 @@
+[
+    {
+      "title": "Face-Recognition Program",
+      "date" : "03/24 - Ongoing",
+      "projectFeatures": ["Python", "OpenCV","Camera View", "Threading"],
+      "repo" : "https://github.com/Fadeleke57/deep-face",
+      "demo" : null,
+      "imageSrc" :"/projectImage/deepface.png",
+      "children" : "Python program using deepFace (face recognition and facial attribute analysis framework) to verify camera view with reference photo."
+    },
+    {
+      "title": "REST API For Predicting Next-Day Stock Price",
+      "date" : "08/23 - Ongoing",
+      "projectFeatures": ["Pytorch", "AlphaVantage","LSTM", "RNN", "REST API", "Django Rest Framework", "NumPy"],
+      "repo" : "https://github.com/Fadeleke57/bonsai-finance-app",
+      "demo" : null,
+      "imageSrc" : "photos/network.jpg",
+      "children" : "Specialized stock price prediction tool using PyTorch and NumPy, focusing on LSTM neural networks to analyze and predict stock market trends."
+    },
+    {
+      "title": "Private Foundation Website",
+      "date" : "03/24 - 04/24",
+      "projectFeatures": ["Next.js", "Vercel","GSAP", "Project Management", "Agile", "Express.js", "Figma"],
+      "repo" : null,
+      "demo" : "https://dekker-8qc6.vercel.app/",
+      "imageSrc" : "/projectImage/dekker.png",
+      "children" : "Website built with Next.js for the Dekker Foundation, a private foundation endowed by the Dekker family. Deployed on Vercel."
+    }
+  ]

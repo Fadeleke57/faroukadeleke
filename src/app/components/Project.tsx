@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import Modal from "./Modal";
-import styles from './Project.module.css'
+import styles from '../styles/Project.module.css'
 import Image from "next/image";
 import Link from "next/link";
 
