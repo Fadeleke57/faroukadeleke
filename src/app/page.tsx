@@ -7,7 +7,6 @@ import Projects from './components/Projects'
 import Skills from './components/Skills'
 
 import Lenis from '@studio-freight/lenis';
-import { useEffect, useRef}  from 'react'
 import { useGSAP } from "@gsap/react";
 
 export default function Home() {
@@ -20,10 +19,9 @@ export default function Home() {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
   }, []);
-  const list = [1,2]
+
   return (
     <main>
       <Landing/>

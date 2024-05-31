@@ -9,16 +9,16 @@ type ProjectData = {
   pName: string;
   date: string;
   features: string[];
-  repository: string;
-  demo: string;
+  repository: string | null;
+  demo: string |null;
 }
 
 type FeaturedProjectProps = {
   title: string,
   date: string,
   projectFeatures: string[],
-  repo : string,
-  demo : string,
+  repo : string | null,
+  demo : string | null,
   imageSrc : string,
   description : ReactNode,
   animated : boolean,
@@ -42,7 +42,8 @@ function FeaturedProject({title, date, projectFeatures, repo, demo, imageSrc, de
         <div className={styles.infoBox}>
           <Info info={data} onInfoClick={onInfoClick} type={0}/>
         </div>
-        <Arrow link={demo ? demo : repo} tag='h2'>{title}</Arrow>
+        { demo && <Arrow link={demo} tag='h2'>{title}</Arrow>}
+        { repo && <Arrow link={repo} tag='h2'>{title}</Arrow>}
         <p className={styles.serviceText}>
           {description}
         </p>

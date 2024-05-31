@@ -7,7 +7,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 import dynamic from 'next/dynamic';
 
-function ProjectDetails({info, onInfoClick, type}) {
+type ProjectData = {
+  show: boolean;
+  pName: string;
+  date: string;
+  features: string[];
+  repository: string | null;
+  demo: string |null;
+}
+
+type ProjectDeatilsProps = {
+  info: ProjectData,
+  onInfoClick: any,
+  type : number
+}
+
+function ProjectDetails({info, onInfoClick, type} : ProjectDeatilsProps) {
 
   const infoRef = useRef(null);
   const features = info.features

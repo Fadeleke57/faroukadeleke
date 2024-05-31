@@ -9,13 +9,14 @@ type ArrowProps = {
   children: ReactNode | null,
   link: string,
   tag: string,
+  color ?: 'white' | '#2e1edd' 
 }
 
-function Arrow({children, link, tag} : ArrowProps) {
+function Arrow({children, link, tag, color} : ArrowProps) {
 
-    const arrow = useRef(null);//link arrow ref
+    const arrow = useRef(null); //link arrow ref
 
-    const handleHover = () => {//moves arrow right on hover
+    const handleHover = () => { //moves arrow right on hover
       if (arrow) {
         gsap.to(arrow.current, {
           x: 30,
@@ -24,7 +25,7 @@ function Arrow({children, link, tag} : ArrowProps) {
       };
     };
 
-    const handleMouseLeave = () => {//resets when mouse leaves link
+    const handleMouseLeave = () => { //resets when mouse leaves link
       if (arrow) {
         gsap.to(arrow.current, {
           x: 0,
@@ -49,13 +50,13 @@ function Arrow({children, link, tag} : ArrowProps) {
         />
         </h2> :
 
-        <p style={{color: 'white'}} className={styles.gradient}>
+        <p style={{color: color}} className={styles.gradient}>
         {children}
         <FontAwesomeIcon 
         icon={faArrowRight} 
         ref={arrow} 
         className={styles.projectArrow}
-        style={{color : 'white'}}
+        style={{color : color}}
         />
         </p>
       } 
