@@ -22,6 +22,7 @@ export const Form = () => {
   const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
   const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
   const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+  console.log(publicKey, serviceID, templateID)
 
   if (publicKey && serviceID && templateID) {
     // Initialize email JS with public key (if not initialized already)
