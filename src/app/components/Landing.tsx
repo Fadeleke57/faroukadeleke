@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from 'react'
 import { useGSAP } from "@gsap/react";
 import SplitType from 'split-type';
+import React from 'react';
 
 function Landing() {
 
@@ -158,63 +159,49 @@ function Landing() {
 
   return (
     <section className={styles.landing}>
-
-          <div className={styles.landingHeader}>
-
-            <div className={styles.introMask}>
-              <div className={styles.introContent}>
-                <p ref={introRef}>{"Hello! I'm.."}</p>
-                <p ref={intro2Ref} style={{marginTop: '0.2em'}}>Greetings!</p>
-              </div>
+      <div className={styles.landingHeader}>
+        <div className={styles.introMask}>
+          <div className={styles.introContent}>
+            <p ref={introRef}>{"Hello! I'm.."}</p>
+            <p ref={intro2Ref} style={{marginTop: '0.2em'}}>Greetings!</p>
+          </div>
+        </div>
+        <div>
+          <h1 ref={namesRef}>Farouk *<br className={styles.nameBreak}></br> Adeleke</h1>
+        </div>
+        <div className={styles.subtitleAnimation} style={{marginTop: '1.5em'}}>
+          <div className={styles.animationWrapper}>
+            <div className={styles.maskPrefix}>
+              <p ref={prefixRef} style={{transform: 'scaleY(0)'}}>Student At</p>
             </div>
-
-            <div>
-              <h1 ref={namesRef}>Farouk *<br className={styles.nameBreak}></br> Adeleke</h1>
-            </div>
-
-            <div className={styles.subtitleAnimation} style={{marginTop: '1.5em'}}>
-              <div className={styles.animationWrapper}>
-                <div className={styles.maskPrefix}>
-                  <p ref={prefixRef} style={{transform: 'scaleY(0)'}}>Student At</p>
-                </div>
-
-                <div className={styles.textMaskTop}>
-                  <p ref={buRef} className={styles.textContent}>Boston University</p>
-                </div>
-              </div>
-            </div>
-
-            <div className={styles.subtitleAnimation}>
-              <div className={styles.animationWrapper}>
-                <div className={styles.maskPrefix}>
-                  <p ref={prefix2Ref} style={{transform: 'translateY(100%)'}}>Freelance</p>
-                </div>
-
-                <div className={styles.textMask}>
-                  <p ref={webDevRef} className={styles.textContent} >Web Development</p>
-                </div>
-              </div>
+            <div className={styles.textMaskTop}>
+              <p ref={buRef} className={styles.textContent}>Boston University</p>
             </div>
           </div>
-
+        </div>
+        <div className={styles.subtitleAnimation}>
+          <div className={styles.animationWrapper}>
+            <div className={styles.maskPrefix}>
+              <p ref={prefix2Ref} style={{transform: 'translateY(100%)'}}>Freelance</p>
+            </div>
+            <div className={styles.textMask}>
+              <p ref={webDevRef} className={styles.textContent}>Web Development</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className={styles.goDown} ref={exploreRef}>
         <Link href={'#Bio'} className={styles.goDowntext}><p>Explore</p></Link>
         <Link href={'#Bio'} className={styles.goDowntext}><FontAwesomeIcon icon={faAngleDown} className={styles.icon} beatFade /></Link>
       </div>
-
-    
       <div className={styles.landingIcons} ref={iconsRef}>
-        
           <Link href={'https://github.com/Fadeleke57'} target='blank'>
-          <FontAwesomeIcon icon={faGithub} className={styles.landingIcon}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faGithub} className={styles.landingIcon}></FontAwesomeIcon>
           </Link>
-      
           <Link href={'https://www.linkedin.com/in/farouk-adeleke/'} target='blank'>
-          <FontAwesomeIcon icon={faLinkedin} className={styles.landingIcon}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faLinkedin} className={styles.landingIcon}></FontAwesomeIcon>
           </Link>
-       
       </div>
-    
     </section>
   )
 }
