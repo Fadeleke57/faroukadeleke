@@ -19,46 +19,48 @@ export const Form = () => {
   const messageInput = form.querySelector("#message");
 
   // Get needed data from email JS
-  const publicKey = "iDWeRGfz2ZBgjaR8R";
-  const serviceID = "service_4nr4jqa";
-  const templateID = "template_u9dom7i";
+  const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY;
+  const serviceID = process.env.NEXT_PUBLIC_SERVICE_ID;
+  const templateID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
 
-  // Initialize email JS with public key (if not initialized already)
-  emailjs.init(publicKey);
+  if (publicKey && serviceID && templateID) {
+    // Initialize email JS with public key (if not initialized already)
+    emailjs.init(publicKey);
 
-  // Get all input field values
-  const inputFields = {
-    name: nameInput.value,
-    email: emailInput.value,
-    message: messageInput.value
-  };
+    // Get all input field values
+    const inputFields = {
+      name: nameInput.value,
+      email: emailInput.value,
+      message: messageInput.value
+    };
 
-  // Send the email (Add service, template ID, and input field values)
-  emailjs.send(serviceID, templateID, inputFields)
-    .then(() => {
-      // Handle success: Change button text, clear input fields, or any other actions
-      console.log("Message Sent Successfully");
-      form.reset(); // Clear the form
-      setIsMessageSent(true);
+    // Send the email (Add service, template ID, and input field values)
+    emailjs.send(serviceID, templateID, inputFields)
+      .then(() => {
+        // Handle success: Change button text, clear input fields, or any other actions
+        console.log("Message Sent Successfully");
+        form.reset(); // Clear the form
+        setIsMessageSent(true);
 
-      // Reset the state after 3 seconds
-      setTimeout(() => {
+        // Reset the state after 3 seconds
+        setTimeout(() => {
+          setIsMessageSent(false);
+        }, 3000);
+      })
+      
+      .catch((error) => {
+        // Handle error: Console log the error, change button text, or any other actions
+        console.log(error);
+        console.log("Something went wrong");
         setIsMessageSent(false);
-      }, 3000);
-    })
-    
-    .catch((error) => {
-      // Handle error: Console log the error, change button text, or any other actions
-      console.log(error);
-      console.log("Something went wrong");
-      setIsMessageSent(false);
-    });
-  };
+      });
+    };
+  }
 
   return (
     <form id="contact-form" className={styles.form} ref={formRef} onSubmit={sendEmail}>
     <div>
-      <p ><input id="user_name" placeholder="Enter your name.." name="name" autoComplete="true" type="Full Name"/></p>
+      <p><input id="user_name" placeholder="Enter your name.." name="name" autoComplete="true" type="Full Name"/></p>
     </div>
     <div>    
       <p ><input id="user_email" placeholder="Enter your email.." name="email" autoComplete="true" type="Email"/></p>
