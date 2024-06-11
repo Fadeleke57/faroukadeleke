@@ -4,40 +4,40 @@
     "skills" : ["Next.js", "LSTM", "Javascript"], 
     "title" : "Bonsai Finance Web App", 
     "description" : "Real-time stock analysis platform utilizing the AlphaVantage API, TwelveData API, and TradingView Widgets to deliver current stock data, sentiment insights, and historical analysis.", 
-    "image": "/projectImage/bonsai.png"},
+    "image": "/gen/bonsai_gen.webp"},
 
     {"codeLink" : "https://github.com/Fadeleke57/faroukadeleke", 
     "demoLink" : "https://faroukadeleke.vercel.app/", 
     "skills" : ["Next.js", "Express.js", "GSAP", "TypeScript"], 
     "title" : "Portfolio Website", 
     "description" : "Next.js website displaying my portfolio and a little bit about myself. I used GSAP's scrollTrigger and useGSAP hook for the animations", 
-    "image": "/projectImage/farouk.png"},
+    "image": "/gen/portfolio_gen.webp"},
 
     {"codeLink" : "https://github.com/Fadeleke57/harvard-textbooks-scraper", 
     "demoLink" : null, 
     "skills" : ["Selenium Webdriver", "Python", "Pandas"], 
     "title" : "Harvard Textbooks Scraper", 
     "description" : "Scrapes a google visualization table with textbooks and their info, converts it to a pandas dataframe, then writes the data to an excel file called 'output.xlsx'", 
-    "image": "/projectImage/selenium.png"},
+    "image": "/gen/selenium_gen.webp"},
 
     {"codeLink" : "https://github.com/Fadeleke57/cattrail", 
     "demoLink" : "https://cattrail.vercel.app/", 
     "skills" : ["Next.js", "GSAP", "Javascript"], 
     "title" : "Website for Cattrail Capital LLC", 
     "description" : "Website for a private investment company serving the Dekker family. Created using NextJS.", 
-    "image": "/projectImage/cattrail.png"},
+    "image": "/gen/cattrail_gen.webp"},
 
     {"codeLink" : "https://github.com/Fadeleke57/investment-research-twitter-scraper", 
     "demoLink" : null, 
     "skills" : ["Selenium Webdriver", "Python", "TextBlob"], 
     "title" : "Twitter Sentiment Analysis", 
     "description" : "Scrapes Twitter for tweets about a given stock symbol, using Selenium WebDriver with Microsoft Edge, and performs sentiment analysis on the collected tweets using the TextBlob library.", 
-    "image": "/projectImage/twitter.jpg"},
+    "image": "/gen/twitter_gen.webp"},
 
     {"codeLink" : "https://github.com/Fadeleke57/Ad-Hoc-Parser-BNF", 
     "demoLink" : null, 
     "skills" : ["OCaml", "UTOP", "OCaml types"], 
     "title" : "Ad-Hoc BNF Specs Parser", 
     "description" : "Implemented OCaml types and Utop to build an ad-hoc parser for Backus-Naur form specifications. In the full project, we built a compiler/parser/evaluator from scratch.", 
-    "image": "/projectImage/parse.png"}
+    "image": "/gen/computer_gen.webp"}
 ]
