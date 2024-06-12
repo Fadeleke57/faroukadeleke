@@ -42,22 +42,22 @@ function Arrow({children, link, tag, color} : ArrowProps) {
     >
       { tag === "h2" ? 
         <h2>
-        {children}
-        <FontAwesomeIcon 
-        icon={faArrowRight} 
-        ref={arrow} 
-        className={styles.projectArrow}
-        />
+          {children}
+          <FontAwesomeIcon 
+            icon={faArrowRight} 
+            ref={arrow} 
+            className={styles.projectArrow}
+          />
         </h2> :
 
-        <p style={{color: color}} className={styles.gradient}>
-        {children}
-        <FontAwesomeIcon 
-        icon={faArrowRight} 
-        ref={arrow} 
-        className={styles.projectArrow}
-        style={{color : color}}
-        />
+        <p style={{color: color}} className={color ? '':  styles.gradient}>
+          {children}
+          <FontAwesomeIcon 
+            icon={faArrowRight} 
+            ref={arrow} 
+            className={styles.projectArrow}
+            style={{color : color}}
+          />
         </p>
       } 
     </div>
