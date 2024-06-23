@@ -56,7 +56,7 @@ function Bio() {
             <h2 className={styles.textContent} ref={namesRef}><span className={styles.gradient}>About</span><br className={styles.nameBreak}></br> Me</h2>
           </div>
           <h2 className={styles.mobileHeader}><span className={styles.gradient}>About</span> Me</h2>
-          <p>I am a student studying Computer Science at Boston University. When I am not in class, I spend my free time devloping projects and learning new technologies. I am currently interested in business automation and computer vision.</p>
+          <p>I am a student studying Computer Science at Boston University. When I am not in class, I spend my free time developing projects and learning new technologies. I am currently interested in business automation and computer vision and currenly learning GoLang.</p>
           <div className={styles.image}>
             <Image src={airplane} className={styles.projectsImg} alt='flight'/>
           </div>
